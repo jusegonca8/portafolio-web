@@ -189,6 +189,29 @@ p {
   transform: translateY(-1px);
 }
 
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.lang-toggle:hover {
+  border-color: var(--color-accent-light);
+  color: var(--color-accent-light);
+  transform: translateY(-1px);
+}
+
 .theme-icon--moon {
   display: none;
 }

@@ -20,16 +20,18 @@
 
       <nav class="nav" id="nav">
         <ul class="nav-list">
-          <li><a href="#inicio" class="nav-link">Inicio</a></li>
-          <li><a href="#logros" class="nav-link">Logros</a></li>
-          <li><a href="#arquitectura" class="nav-link">Arquitectura</a></li>
-          <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
-          <li><a href="#educacion" class="nav-link">Educación</a></li>
-          <li><a href="#contacto" class="nav-link nav-link--cta">Contacto</a></li>
+          <li><a href="#inicio" class="nav-link" data-es="Inicio" data-en="Home">Inicio</a></li>
+          <li><a href="#logros" class="nav-link" data-es="Logros" data-en="Achievements">Logros</a></li>
+          <li><a href="#arquitectura" class="nav-link" data-es="Arquitectura" data-en="Architecture">Arquitectura</a></li>
+          <li><a href="#experiencia" class="nav-link" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
+          <li><a href="#educacion" class="nav-link" data-es="Educación" data-en="Education">Educación</a></li>
+          <li><a href="#contacto" class="nav-link nav-link--cta" data-es="Contacto" data-en="Contact">Contacto</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Switch to English" data-lang="es">EN</button>
+
         <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar a modo oscuro" aria-pressed="false">
           <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <circle cx="12" cy="12" r="4"></circle>
@@ -54,17 +56,17 @@
     <!-- HERO -->
     <section class="hero" id="inicio">
       <div class="container hero-inner">
-        <p class="hero-eyebrow">Portafolio profesional</p>
+        <p class="hero-eyebrow" data-es="Portafolio profesional" data-en="Professional Portfolio">Portafolio profesional</p>
         <h1 class="hero-title">Juan Sebastián González Castellanos <span class="hero-title-badge">PMP®</span></h1>
         <p class="hero-role">Senior Technical Project Manager · AI Product Manager · Digital Transformation Leader</p>
-        <p class="hero-pitch">
+        <p class="hero-pitch" data-es="Ingeniero, PMP® y creador de productos SaaS impulsados por IA. Durante los últimos 11 años, garanticé el 99% de uptime para operaciones regionales de 1M+ usuarias. Hoy construyo arquitecturas Chat-to-Case (n8n, Python, LLMs) que automatizan flujos corporativos con proyecciones de eficiencia del 75%." data-en="Engineer, PMP®, and builder of AI-driven SaaS products. Over the past 11 years, I ensured 99% uptime for regional operations serving 1M+ users. Today, I build Chat-to-Case architectures (n8n, Python, LLMs) that automate corporate workflows with projected efficiency gains of 75%.">
           Ingeniero, PMP® y creador de productos SaaS impulsados por IA. Durante los últimos 11 años, garanticé
           el 99% de uptime para operaciones regionales de 1M+ usuarias. Hoy construyo arquitecturas Chat-to-Case
           (n8n, Python, LLMs) que automatizan flujos corporativos con proyecciones de eficiencia del 75%.
         </p>
         <div class="hero-actions">
-          <a href="#logros" class="btn btn-primary">Ver logros</a>
-          <a href="#contacto" class="btn btn-outline">Contactar</a>
+          <a href="#logros" class="btn btn-primary" data-es="Ver logros" data-en="View Achievements">Ver logros</a>
+          <a href="#contacto" class="btn btn-outline" data-es="Contactar" data-en="Contact">Contactar</a>
         </div>
         <p class="hero-location">📍 Bogotá, Colombia</p>
       </div>
@@ -73,32 +75,32 @@
     <!-- LOGROS -->
     <section class="section" id="logros">
       <div class="container">
-        <p class="section-eyebrow">Impacto medible</p>
-        <h2 class="section-title">Principales logros</h2>
+        <p class="section-eyebrow" data-es="Impacto medible" data-en="Measurable Impact">Impacto medible</p>
+        <h2 class="section-title" data-es="Principales logros" data-en="Key Achievements">Principales logros</h2>
 
         <div class="cards-grid">
           <article class="card">
             <p class="card-metric">USD 250K+</p>
-            <h3 class="card-title">Ahorro operativo acumulado</h3>
-            <p class="card-text">Optimización de contratos de telecomunicaciones, racionalización de proveedores e implementación de estrategias de automatización.</p>
+            <h3 class="card-title" data-es="Ahorro operativo acumulado" data-en="Cumulative Operational Savings">Ahorro operativo acumulado</h3>
+            <p class="card-text" data-es="Optimización de contratos de telecomunicaciones, racionalización de proveedores e implementación de estrategias de automatización." data-en="Optimization of telecommunications contracts, vendor rationalization, and implementation of automation strategies.">Optimización de contratos de telecomunicaciones, racionalización de proveedores e implementación de estrategias de automatización.</p>
           </article>
 
           <article class="card">
-            <p class="card-metric">1M+ / 5 países</p>
-            <h3 class="card-title">Usuarios en operación continua</h3>
-            <p class="card-text">Continuidad de plataformas críticas en Latinoamérica y Norteamérica mediante administración de infraestructura y TI.</p>
+            <p class="card-metric" data-es="1M+ / 5 países" data-en="1M+ / 5 Countries">1M+ / 5 países</p>
+            <h3 class="card-title" data-es="Usuarios en operación continua" data-en="Continuous Operations Users">Usuarios en operación continua</h3>
+            <p class="card-text" data-es="Continuidad de plataformas críticas en Latinoamérica y Norteamérica mediante administración de infraestructura y TI." data-en="Business continuity for mission-critical platforms across Latin America and North America through infrastructure and IT management.">Continuidad de plataformas críticas en Latinoamérica y Norteamérica mediante administración de infraestructura y TI.</p>
           </article>
 
           <article class="card">
             <p class="card-metric">Enterprise</p>
-            <h3 class="card-title">Implementaciones Salesforce</h3>
-            <p class="card-text">Dirección de implementaciones Salesforce Enterprise para clientes internacionales, del onboarding a la adopción.</p>
+            <h3 class="card-title" data-es="Implementaciones Salesforce" data-en="Salesforce Implementations">Implementaciones Salesforce</h3>
+            <p class="card-text" data-es="Dirección de implementaciones Salesforce Enterprise para clientes internacionales, del onboarding a la adopción." data-en="Leadership of Salesforce Enterprise implementations for international clients, from onboarding to adoption.">Dirección de implementaciones Salesforce Enterprise para clientes internacionales, del onboarding a la adopción.</p>
           </article>
 
           <article class="card">
             <p class="card-metric">LLMs · Python · n8n</p>
-            <h3 class="card-title">Soluciones SaaS con IA</h3>
-            <p class="card-text">Diseño de arquitectura de producto SaaS impulsada por Inteligencia Artificial Generativa y automatización inteligente.</p>
+            <h3 class="card-title" data-es="Soluciones SaaS con IA" data-en="AI-Powered SaaS Solutions">Soluciones SaaS con IA</h3>
+            <p class="card-text" data-es="Diseño de arquitectura de producto SaaS impulsada por Inteligencia Artificial Generativa y automatización inteligente." data-en="Design of SaaS product architecture powered by Generative Artificial Intelligence and intelligent automation.">Diseño de arquitectura de producto SaaS impulsada por Inteligencia Artificial Generativa y automatización inteligente.</p>
           </article>
         </div>
       </div>
@@ -107,14 +109,14 @@
     <!-- ARQUITECTURA DE PRODUCTO -->
     <section class="section" id="arquitectura">
       <div class="container">
-        <p class="section-eyebrow">Producto en profundidad</p>
-        <h2 class="section-title">Arquitectura de Producto Destacada: AuditFlow</h2>
+        <p class="section-eyebrow" data-es="Producto en profundidad" data-en="Product Deep Dive">Producto en profundidad</p>
+        <h2 class="section-title" data-es="Arquitectura de Producto Destacada: AuditFlow" data-en="Featured Product Architecture: AuditFlow">Arquitectura de Producto Destacada: AuditFlow</h2>
 
         <div class="architecture-card">
           <div class="flow-diagram" role="img" aria-label="Flujo de arquitectura: Usuario, Next.js, n8n, LLM y Supabase">
             <div class="flow-node">
               <span class="flow-node-icon" aria-hidden="true">👤</span>
-              <span class="flow-node-label">Usuario</span>
+              <span class="flow-node-label" data-es="Usuario" data-en="User">Usuario</span>
             </div>
 
             <span class="flow-arrow" aria-hidden="true">&rarr;</span>
@@ -128,21 +130,21 @@
 
             <div class="flow-node">
               <span class="flow-node-icon" aria-hidden="true">⚙️</span>
-              <span class="flow-node-label">n8n<br><small>Orquestador</small></span>
+              <span class="flow-node-label">n8n<br><small data-es="Orquestador" data-en="Orchestrator">Orquestador</small></span>
             </div>
 
             <span class="flow-arrow" aria-hidden="true">&rarr;</span>
 
             <div class="flow-node">
               <span class="flow-node-icon" aria-hidden="true">🧠</span>
-              <span class="flow-node-label">LLM<br><small>Intención / Clasificación</small></span>
+              <span class="flow-node-label">LLM<br><small data-es="Intención / Clasificación" data-en="Intent / Classification">Intención / Clasificación</small></span>
             </div>
 
             <span class="flow-arrow" aria-hidden="true">&rarr;</span>
 
             <div class="flow-node">
               <span class="flow-node-icon" aria-hidden="true">🗄️</span>
-              <span class="flow-node-label">Supabase<br><small>Persistencia</small></span>
+              <span class="flow-node-label">Supabase<br><small data-es="Persistencia" data-en="Persistence">Persistencia</small></span>
             </div>
           </div>
         </div>
@@ -152,20 +154,20 @@
     <!-- EXPERIENCIA -->
     <section class="section section--alt" id="experiencia">
       <div class="container">
-        <p class="section-eyebrow">Trayectoria</p>
-        <h2 class="section-title">Experiencia profesional</h2>
+        <p class="section-eyebrow" data-es="Trayectoria" data-en="Professional Journey">Trayectoria</p>
+        <h2 class="section-title" data-es="Experiencia profesional" data-en="Professional Experience">Experiencia profesional</h2>
 
         <ol class="timeline">
           <li class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-              <p class="timeline-date">2025 – Actualidad</p>
+              <p class="timeline-date" data-es="2025 – Actualidad" data-en="2025 – Present">2025 – Actualidad</p>
               <h3 class="timeline-role">AI Solutions Architect | Product Owner</h3>
               <p class="timeline-company">AuditFlow PMO</p>
               <ul class="timeline-list">
-                <li>Diseño de arquitectura Chat-to-Case automatizando la consolidación de datos (proyección del 75% de ahorro en horas-hombre).</li>
-                <li>Implementación de arquitectura RAG consumiendo APIs de OpenAI/Claude con Chain of Thought para mitigar alucinaciones.</li>
-                <li>Orquestación del ecosistema utilizando Next.js 15+, @supabase/ssr, Python y n8n.</li>
+                <li data-es="Diseño de arquitectura Chat-to-Case automatizando la consolidación de datos (proyección del 75% de ahorro en horas-hombre)." data-en="Designed a Chat-to-Case architecture automating data consolidation (projected 75% savings in labor hours).">Diseño de arquitectura Chat-to-Case automatizando la consolidación de datos (proyección del 75% de ahorro en horas-hombre).</li>
+                <li data-es="Implementación de arquitectura RAG consumiendo APIs de OpenAI/Claude con Chain of Thought para mitigar alucinaciones." data-en="Implemented a RAG architecture consuming OpenAI/Claude APIs with Chain of Thought to mitigate hallucinations.">Implementación de arquitectura RAG consumiendo APIs de OpenAI/Claude con Chain of Thought para mitigar alucinaciones.</li>
+                <li data-es="Orquestación del ecosistema utilizando Next.js 15+, @supabase/ssr, Python y n8n." data-en="Orchestrated the ecosystem using Next.js 15+, @supabase/ssr, Python, and n8n.">Orquestación del ecosistema utilizando Next.js 15+, @supabase/ssr, Python y n8n.</li>
               </ul>
             </div>
           </li>
@@ -173,10 +175,10 @@
           <li class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-              <p class="timeline-date">Mayo 2026 – Julio 2026</p>
-              <h3 class="timeline-role">Technical Project Manager (Consultoría)</h3>
+              <p class="timeline-date" data-es="Mayo 2026 – Julio 2026" data-en="May 2026 – July 2026">Mayo 2026 – Julio 2026</p>
+              <h3 class="timeline-role" data-es="Technical Project Manager (Consultoría)" data-en="Technical Project Manager (Consulting)">Technical Project Manager (Consultoría)</h3>
               <p class="timeline-company">BeneLinx</p>
-              <p class="timeline-text">
+              <p class="timeline-text" data-es="Coordinación de implementaciones Enterprise de Salesforce end-to-end, gestión de riesgos y cronogramas, y comunicación ejecutiva con equipos globales." data-en="Coordinated end-to-end Salesforce Enterprise implementations, managed risks and schedules, and led executive communication with global teams.">
                 Coordinación de implementaciones Enterprise de Salesforce end-to-end, gestión de riesgos y
                 cronogramas, y comunicación ejecutiva con equipos globales.
               </p>
@@ -186,10 +188,10 @@
           <li class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-              <p class="timeline-date">Enero 2026</p>
-              <h3 class="timeline-role">Product Owner (Consultoría)</h3>
+              <p class="timeline-date" data-es="Enero 2026" data-en="January 2026">Enero 2026</p>
+              <h3 class="timeline-role" data-es="Product Owner (Consultoría)" data-en="Product Owner (Consulting)">Product Owner (Consultoría)</h3>
               <p class="timeline-company">Oktana</p>
-              <p class="timeline-text">
+              <p class="timeline-text" data-es="Priorización del Product Backlog, facilitación de ceremonias Agile y definición de historias de usuario para reducir riesgos funcionales y mejorar la visibilidad ejecutiva." data-en="Prioritized the Product Backlog, facilitated Agile ceremonies, and defined user stories to reduce functional risk and improve executive visibility.">
                 Priorización del Product Backlog, facilitación de ceremonias Agile y definición de historias de
                 usuario para reducir riesgos funcionales y mejorar la visibilidad ejecutiva.
               </p>
@@ -199,10 +201,10 @@
           <li class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
-              <p class="timeline-date">Septiembre 2014 – Noviembre 2025</p>
+              <p class="timeline-date" data-es="Septiembre 2014 – Noviembre 2025" data-en="September 2014 – November 2025">Septiembre 2014 – Noviembre 2025</p>
               <h3 class="timeline-role">IT Senior Leader | Technical Lead</h3>
               <p class="timeline-company">Mary Kay Colombia &amp; USA</p>
-              <p class="timeline-text">
+              <p class="timeline-text" data-es="Continuidad operacional de plataformas críticas para más de 1 millón de usuarios en cinco países. Ahorros superiores a USD 250.000 anuales y liderazgo de equipos multidisciplinarios de infraestructura, soporte y proveedores estratégicos." data-en="Ensured operational continuity of mission-critical platforms for more than 1 million users across five countries. Delivered savings exceeding USD 250,000 annually and led cross-functional teams spanning infrastructure, support, and strategic vendors.">
                 Continuidad operacional de plataformas críticas para más de 1 millón de usuarios en cinco países.
                 Ahorros superiores a USD 250.000 anuales y liderazgo de equipos multidisciplinarios de
                 infraestructura, soporte y proveedores estratégicos.
@@ -216,8 +218,8 @@
     <!-- EDUCACIÓN -->
     <section class="section" id="educacion">
       <div class="container">
-        <p class="section-eyebrow">Formación</p>
-        <h2 class="section-title">Educación y certificaciones</h2>
+        <p class="section-eyebrow" data-es="Formación" data-en="Education">Formación</p>
+        <h2 class="section-title" data-es="Educación y certificaciones" data-en="Education &amp; Certifications">Educación y certificaciones</h2>
 
         <div class="education-grid">
           <ul class="education-list">
@@ -226,29 +228,29 @@
               <span class="education-school">Project Management Institute (PMI)</span>
             </li>
             <li>
-              <span class="education-degree">MBA <em>(En curso)</em></span>
+              <span class="education-degree">MBA <em data-es="(En curso)" data-en="(In progress)">(En curso)</em></span>
               <span class="education-school">ENEB</span>
             </li>
             <li>
-              <span class="education-degree">Máster en Business Intelligence &amp; Machine Learning <em>(En curso)</em></span>
+              <span class="education-degree"><span data-es="Máster en Business Intelligence &amp; Machine Learning " data-en="Master's in Business Intelligence &amp; Machine Learning ">Máster en Business Intelligence &amp; Machine Learning </span><em data-es="(En curso)" data-en="(In progress)">(En curso)</em></span>
               <span class="education-school">ENEB</span>
             </li>
             <li>
-              <span class="education-degree">Especialización en Inteligencia Artificial Corporativa</span>
+              <span class="education-degree" data-es="Especialización en Inteligencia Artificial Corporativa" data-en="Corporate Artificial Intelligence Specialization">Especialización en Inteligencia Artificial Corporativa</span>
               <span class="education-school">ENEB</span>
             </li>
             <li>
-              <span class="education-degree">Especialista en Gerencia de Proyectos</span>
+              <span class="education-degree" data-es="Especialista en Gerencia de Proyectos" data-en="Project Management Specialist">Especialista en Gerencia de Proyectos</span>
               <span class="education-school">Universidad El Bosque</span>
             </li>
             <li>
-              <span class="education-degree">Ingeniero de Sistemas</span>
+              <span class="education-degree" data-es="Ingeniero de Sistemas" data-en="Systems Engineer">Ingeniero de Sistemas</span>
               <span class="education-school">Universidad Libre</span>
             </li>
           </ul>
 
           <div class="skills-panel">
-            <h3 class="skills-title">Áreas de especialización</h3>
+            <h3 class="skills-title" data-es="Áreas de especialización" data-en="Areas of Expertise">Áreas de especialización</h3>
             <div class="tag-list">
               <span class="tag">Project &amp; Program Management</span>
               <span class="tag">Product Management</span>
@@ -285,7 +287,7 @@
         </a>
       </div>
     </div>
-    <p class="footer-copy">© <span id="year"></span> Juan Sebastián González Castellanos. Todos los derechos reservados.</p>
+    <p class="footer-copy">© <span id="year"></span> Juan Sebastián González Castellanos. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
   </footer>
 
   <!-- WHATSAPP FLOATING ACTION BUTTON -->
