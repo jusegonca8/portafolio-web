@@ -810,7 +810,7 @@ body.dark-mode .theme-icon--moon {
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  .footer-inner {
+  .footer-inner 
     flex-direction: column;
   }
 }
