@@ -3,8 +3,8 @@ const LANG_STORAGE_KEY = 'jsg-portfolio-lang';
 
 (() => {
   const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
   }
 })();
 
@@ -35,17 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
     applyLanguage(nextLang);
   });
 
-  const applyThemeState = (isDark) => {
-    themeToggle.setAttribute('aria-pressed', String(isDark));
-    themeToggle.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+  const applyThemeState = (isLight) => {
+    themeToggle.setAttribute('aria-pressed', String(isLight));
+    themeToggle.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
   };
 
-  applyThemeState(document.body.classList.contains('dark-mode'));
+  applyThemeState(document.body.classList.contains('light-mode'));
 
   themeToggle.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light');
-    applyThemeState(isDark);
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem(THEME_STORAGE_KEY, isLight ? 'light' : 'dark');
+    applyThemeState(isLight);
   });
 
   const closeNav = () => {
@@ -64,14 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Efecto de brillo interactivo 3D en tarjetas[cite: 7]
+  // Efecto de brillo interactivo 3D en tarjetas
   document.addEventListener('mousemove', (e) => {
     const cards = document.querySelectorAll('.card, .architecture-card');
     cards.forEach((card) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       card.style.setProperty('--mouse-x', `${x}px`);
       card.style.setProperty('--mouse-y', `${y}px`);
     });
