@@ -1,0 +1,14 @@
+C:\Users\juans\OneDrive\Desktop\Curso Claude Code\portafolio-web
+├── AGENTS.md
+├── CLAUDE.md
+├── hoja_de_vida.md
+├── index.html
+├── mapa-proyecto.txt
+├── package-lock.json
+├── package.json
+├── script.js
+└── styles.css
+
+directory: 30 file: 93
+
+ignored: directory (1)

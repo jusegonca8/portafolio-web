@@ -157,6 +157,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCarouselPadding();
     syncCarouselState();
+
+    // Autoplay: avanza cada 4s, se pausa con el mouse o el foco de teclado
+    // sobre el carrusel, y respeta prefers-reduced-motion.
+    const carouselSection = carouselTrack.closest('section') || carouselTrack;
+    const carouselPrefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const AUTOPLAY_DELAY = 4000;
+    let autoplayTimer = null;
+
+    const stopAutoplay = () => {
+      window.clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    };
+
+    const startAutoplay = () => {
+      if (carouselPrefersReducedMotion || autoplayTimer || cards.length < 2) return;
+      autoplayTimer = window.setInterval(() => {
+        const nextIndex = (getActiveIndex() + 1) % cards.length;
+        cards[nextIndex].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }, AUTOPLAY_DELAY);
+    };
+
+    if (!carouselPrefersReducedMotion) {
+      carouselSection.addEventListener('mouseenter', stopAutoplay);
+      carouselSection.addEventListener('mouseleave', startAutoplay);
+      carouselSection.addEventListener('focusin', stopAutoplay);
+      carouselSection.addEventListener('focusout', startAutoplay);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      });
+
+      startAutoplay();
+    }
   }
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
