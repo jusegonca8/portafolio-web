@@ -110,11 +110,29 @@
     <!-- PROYECTOS DESTACADOS -->
     <section class="section" id="proyectos">
       <div class="container">
-        <p class="section-eyebrow" data-es="Portafolio de productos" data-en="Product Portfolio">Portafolio de productos</p>
-        <h2 class="section-title" data-es="Proyectos Destacados" data-en="Featured Projects">Proyectos Destacados</h2>
+        <div class="section-header-row">
+          <div>
+            <p class="section-eyebrow" data-es="Portafolio de productos" data-en="Product Portfolio">Portafolio de productos</p>
+            <h2 class="section-title" data-es="Proyectos Destacados" data-en="Featured Projects">Proyectos Destacados</h2>
+          </div>
 
-        <div class="cards-grid">
-          <article class="architecture-card">
+          <div class="carousel-controls">
+            <button class="carousel-btn" type="button" data-carousel-prev aria-label="Proyecto anterior">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6"></path>
+              </svg>
+            </button>
+            <button class="carousel-btn" type="button" data-carousel-next aria-label="Siguiente proyecto">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 18l6-6-6-6"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-scroll" role="list" data-carousel-track>
+          <article class="architecture-card" role="listitem">
             <h3 class="card-title">AuditFlow</h3>
             <p class="card-text" data-es="Arquitectura Chat-to-Case que automatiza la consolidación de datos combinando Next.js, n8n y modelos LLM, con persistencia en Supabase." data-en="Chat-to-Case architecture that automates data consolidation by combining Next.js, n8n, and LLMs, with Supabase persistence.">Arquitectura Chat-to-Case que automatiza la consolidación de datos combinando Next.js, n8n y modelos LLM, con persistencia en Supabase.</p>
 
@@ -124,28 +142,28 @@
                 <span class="flow-node-label" data-es="Usuario" data-en="User">Usuario</span>
               </div>
 
-              <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <span class="flow-connector" aria-hidden="true"></span>
 
               <div class="flow-node">
                 <span class="flow-node-icon" aria-hidden="true">⚛️</span>
                 <span class="flow-node-label">Next.js<br><small>Frontend</small></span>
               </div>
 
-              <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <span class="flow-connector" aria-hidden="true"></span>
 
               <div class="flow-node">
                 <span class="flow-node-icon" aria-hidden="true">⚙️</span>
                 <span class="flow-node-label">n8n<br><small data-es="Orquestador" data-en="Orchestrator">Orquestador</small></span>
               </div>
 
-              <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <span class="flow-connector" aria-hidden="true"></span>
 
               <div class="flow-node">
                 <span class="flow-node-icon" aria-hidden="true">🧠</span>
                 <span class="flow-node-label">LLM<br><small data-es="Intención / Clasificación" data-en="Intent / Classification">Intención / Clasificación</small></span>
               </div>
 
-              <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <span class="flow-connector" aria-hidden="true"></span>
 
               <div class="flow-node">
                 <span class="flow-node-icon" aria-hidden="true">🗄️</span>
@@ -165,7 +183,7 @@
             </div>
           </article>
 
-          <article class="architecture-card">
+          <article class="architecture-card" role="listitem">
             <h3 class="card-title">Web Check-in</h3>
             <p class="card-text" data-es="Aplicación web para la gestión automatizada de check-in de huéspedes, con captura de reservas en tiempo real y generación de tokens únicos de seguridad." data-en="Web application for automated guest check-in management, featuring real-time reservation capture and unique security token generation.">Aplicación web para la gestión automatizada de check-in de huéspedes, con captura de reservas en tiempo real y generación de tokens únicos de seguridad.</p>
 
@@ -175,28 +193,28 @@
                 <span class="flow-node-label" data-es="Huésped" data-en="Guest">Huésped</span>
               </div>
 
-              <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <span class="flow-connector" aria-hidden="true"></span>
 
               <div class="flow-node">
                 <span class="flow-node-icon" aria-hidden="true">⚛️</span>
                 <span class="flow-node-label">Next.js<br><small>Frontend</small></span>
               </div>
 
-              <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <span class="flow-connector" aria-hidden="true"></span>
 
               <div class="flow-node">
                 <span class="flow-node-icon" aria-hidden="true">🚀</span>
                 <span class="flow-node-label">Vercel<br><small data-es="Despliegue" data-en="Deployment">Despliegue</small></span>
               </div>
 
-              <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <span class="flow-connector" aria-hidden="true"></span>
 
               <div class="flow-node">
                 <span class="flow-node-icon" aria-hidden="true">🔗</span>
                 <span class="flow-node-label">Make<br><small data-es="Webhooks / Automatización" data-en="Webhooks / Automation">Webhooks / Automatización</small></span>
               </div>
 
-              <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <span class="flow-connector" aria-hidden="true"></span>
 
               <div class="flow-node">
                 <span class="flow-node-icon" aria-hidden="true">🗄️</span>
@@ -216,7 +234,7 @@
             </div>
           </article>
 
-          <article class="architecture-card">
+          <article class="architecture-card" role="listitem">
             <h3 class="card-title" data-es="Integración de Cumplimiento y Validación de Identidad" data-en="Compliance &amp; Identity Validation Integration">Integración de Cumplimiento y Validación de Identidad</h3>
             <p class="card-text" data-es="Arquitectura e integración de sistemas críticos de validación antifraude y normativos conectados a plataformas de registro en línea (.NET)." data-en="Architecture and integration of critical antifraud and regulatory validation systems connected to online registration platforms (.NET).">Arquitectura e integración de sistemas críticos de validación antifraude y normativos conectados a plataformas de registro en línea (.NET).</p>
 
@@ -235,7 +253,7 @@
             </ul>
           </article>
 
-          <article class="architecture-card">
+          <article class="architecture-card" role="listitem">
             <h3 class="card-title" data-es="Automatización y Procesamiento Masivo de Facturación Electrónica" data-en="Automation &amp; Mass Processing of Electronic Invoicing">Automatización y Procesamiento Masivo de Facturación Electrónica</h3>
             <p class="card-text" data-es="Implementación de motor de facturación electrónica a gran escala conectado al ERP corporativo." data-en="Implementation of a large-scale electronic invoicing engine connected to the corporate ERP.">Implementación de motor de facturación electrónica a gran escala conectado al ERP corporativo.</p>
 
@@ -253,7 +271,7 @@
             </ul>
           </article>
 
-          <article class="architecture-card">
+          <article class="architecture-card" role="listitem">
             <h3 class="card-title" data-es="Ecosistema E-Commerce y Salesforce Multipaís" data-en="Multi-Country E-Commerce &amp; Salesforce Ecosystem">Ecosistema E-Commerce y Salesforce Multipaís</h3>
             <p class="card-text" data-es="Despliegue y arquitectura de plataformas de experiencia de cliente y comercio electrónico a nivel regional." data-en="Deployment and architecture of regional customer experience and e-commerce platforms.">Despliegue y arquitectura de plataformas de experiencia de cliente y comercio electrónico a nivel regional.</p>
 
@@ -272,7 +290,7 @@
             </ul>
           </article>
 
-          <article class="architecture-card">
+          <article class="architecture-card" role="listitem">
             <h3 class="card-title" data-es="Infraestructura Datacenter y Redes Críticas" data-en="Data Center Infrastructure &amp; Critical Networks">Infraestructura Datacenter y Redes Críticas</h3>
             <p class="card-text" data-es="Diseño y despliegue físico y lógico de la infraestructura tecnológica corporativa para sede de 1,000 metros cuadrados." data-en="Physical and logical design and deployment of corporate technology infrastructure for a 1,000-square-meter facility.">Diseño y despliegue físico y lógico de la infraestructura tecnológica corporativa para sede de 1,000 metros cuadrados.</p>
 
@@ -294,7 +312,10 @@
               <li data-es="Implementación de sistema de gestión de garantías sobre Ruby on Rails en servidores Linux desplegados en AWS EC2." data-en="Implemented a warranty management system built on Ruby on Rails on Linux servers deployed on AWS EC2.">Implementación de sistema de gestión de garantías sobre Ruby on Rails en servidores Linux desplegados en AWS EC2.</li>
             </ul>
           </article>
-        </div>
+      </div>
+
+      <div class="container">
+        <div class="carousel-dots" role="tablist" aria-label="Seleccionar proyecto" data-carousel-dots></div>
       </div>
     </section>
 

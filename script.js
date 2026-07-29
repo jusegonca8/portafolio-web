@@ -66,6 +66,99 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Carrusel de Proyectos Destacados: navegación por botones y dots
+  const carouselTrack = document.querySelector('[data-carousel-track]');
+  if (carouselTrack) {
+    const cards = Array.from(carouselTrack.children);
+    const prevBtn = document.querySelector('[data-carousel-prev]');
+    const nextBtn = document.querySelector('[data-carousel-next]');
+    const dotsContainer = document.querySelector('[data-carousel-dots]');
+
+    const dots = cards.map((card, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel-dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Ir al proyecto ${index + 1} de ${cards.length}`);
+      dot.addEventListener('click', () => {
+        card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      });
+      dotsContainer.appendChild(dot);
+      return dot;
+    });
+
+    cards.forEach((card) => {
+      card.addEventListener('click', (e) => {
+        if (!card.classList.contains('is-active') && !e.target.closest('a, button')) {
+          card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      });
+    });
+
+    // El padding lateral se calcula en JS para que la primera y última
+    // tarjeta también puedan quedar perfectamente centradas al hacer scroll.
+    const updateCarouselPadding = () => {
+      const trackWidth = carouselTrack.clientWidth;
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const sidePad = Math.max((trackWidth - cardWidth) / 2, 24);
+      carouselTrack.style.setProperty('--carousel-pad', `${sidePad}px`);
+    };
+
+    const getActiveIndex = () => {
+      const trackRect = carouselTrack.getBoundingClientRect();
+      const trackCenter = trackRect.left + trackRect.width / 2;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+      cards.forEach((card, index) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const distance = Math.abs(cardCenter - trackCenter);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+      return closestIndex;
+    };
+
+    const syncCarouselState = () => {
+      const activeIndex = getActiveIndex();
+      cards.forEach((card, index) => {
+        card.classList.toggle('is-active', index === activeIndex);
+      });
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('is-active', index === activeIndex);
+        dot.setAttribute('aria-selected', String(index === activeIndex));
+      });
+      if (prevBtn) prevBtn.disabled = activeIndex === 0;
+      if (nextBtn) nextBtn.disabled = activeIndex === cards.length - 1;
+    };
+
+    const goToStep = (direction) => {
+      const nextIndex = Math.min(Math.max(getActiveIndex() + direction, 0), cards.length - 1);
+      cards[nextIndex].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    };
+
+    prevBtn?.addEventListener('click', () => goToStep(-1));
+    nextBtn?.addEventListener('click', () => goToStep(1));
+
+    let scrollTimeout;
+    carouselTrack.addEventListener('scroll', () => {
+      window.clearTimeout(scrollTimeout);
+      scrollTimeout = window.setTimeout(syncCarouselState, 100);
+    });
+
+    window.addEventListener('resize', () => {
+      const activeBeforeResize = getActiveIndex();
+      updateCarouselPadding();
+      cards[activeBeforeResize].scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+      syncCarouselState();
+    });
+
+    updateCarouselPadding();
+    syncCarouselState();
+  }
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const EASE = [0.16, 1, 0.3, 1];
 
@@ -101,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // (tarjetas de Logros/Proyectos/Toolkit, línea de tiempo, educación)
     const revealGroups = [
       { container: '.cards-grid', items: ':scope > *' },
+      { container: '.projects-scroll', items: ':scope > *' },
       { container: '.timeline', items: ':scope > .timeline-item' },
       { container: '.education-grid', items: ':scope > *' },
     ];
