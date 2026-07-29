@@ -1,0 +1,19 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "script.js",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "script",
+      "community": 0,
+      "norm_label": "script.js"
+    }
+  ],
+  "links": [],
+  "hyperedges": []
+}
