@@ -74,6 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('[data-carousel-next]');
     const dotsContainer = document.querySelector('[data-carousel-dots]');
 
+    const scrollToCard = (card, smooth = true) => {
+      const targetLeft = card.offsetLeft - (carouselTrack.clientWidth / 2) + (card.clientWidth / 2);
+      carouselTrack.scrollTo({
+        left: targetLeft,
+        behavior: smooth ? 'smooth' : 'auto'
+      });
+    };
+
     const dots = cards.map((card, index) => {
       const dot = document.createElement('button');
       dot.type = 'button';
@@ -81,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dot.setAttribute('role', 'tab');
       dot.setAttribute('aria-label', `Ir al proyecto ${index + 1} de ${cards.length}`);
       dot.addEventListener('click', () => {
-        card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        scrollToCard(card, true);
       });
       dotsContainer.appendChild(dot);
       return dot;
@@ -90,13 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach((card) => {
       card.addEventListener('click', (e) => {
         if (!card.classList.contains('is-active') && !e.target.closest('a, button')) {
-          card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          scrollToCard(card, true);
         }
       });
     });
 
-    // El padding lateral se calcula en JS para que la primera y última
-    // tarjeta también puedan quedar perfectamente centradas al hacer scroll.
     const updateCarouselPadding = () => {
       const trackWidth = carouselTrack.clientWidth;
       const cardWidth = cards[0].getBoundingClientRect().width;
@@ -136,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const goToStep = (direction) => {
       const nextIndex = Math.min(Math.max(getActiveIndex() + direction, 0), cards.length - 1);
-      cards[nextIndex].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      scrollToCard(cards[nextIndex], true);
     };
 
     prevBtn?.addEventListener('click', () => goToStep(-1));
@@ -151,19 +157,20 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
       const activeBeforeResize = getActiveIndex();
       updateCarouselPadding();
-      cards[activeBeforeResize].scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+      scrollToCard(cards[activeBeforeResize], false);
       syncCarouselState();
     });
 
     updateCarouselPadding();
     syncCarouselState();
 
-    // Autoplay: avanza cada 4s, se pausa con el mouse o el foco de teclado
-    // sobre el carrusel, y respeta prefers-reduced-motion.
+    // Autoplay con IntersectionObserver
     const carouselSection = carouselTrack.closest('section') || carouselTrack;
     const carouselPrefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const AUTOPLAY_DELAY = 4000;
+    
     let autoplayTimer = null;
+    let isCarouselVisible = false;
 
     const stopAutoplay = () => {
       window.clearInterval(autoplayTimer);
@@ -171,18 +178,20 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const startAutoplay = () => {
-      if (carouselPrefersReducedMotion || autoplayTimer || cards.length < 2) return;
+      if (carouselPrefersReducedMotion || autoplayTimer || cards.length < 2 || !isCarouselVisible) return;
       autoplayTimer = window.setInterval(() => {
         const nextIndex = (getActiveIndex() + 1) % cards.length;
-        cards[nextIndex].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        scrollToCard(cards[nextIndex], true);
       }, AUTOPLAY_DELAY);
     };
 
     if (!carouselPrefersReducedMotion) {
-      carouselSection.addEventListener('mouseenter', stopAutoplay);
-      carouselSection.addEventListener('mouseleave', startAutoplay);
-      carouselSection.addEventListener('focusin', stopAutoplay);
-      carouselSection.addEventListener('focusout', startAutoplay);
+      // CORRECCIÓN: Ahora solo se pausa si el ratón entra en las TARJETAS (carouselTrack), no en toda la sección.
+      carouselTrack.addEventListener('mouseenter', stopAutoplay);
+      carouselTrack.addEventListener('mouseleave', startAutoplay);
+      carouselTrack.addEventListener('focusin', stopAutoplay);
+      carouselTrack.addEventListener('focusout', startAutoplay);
+      
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
           stopAutoplay();
@@ -191,7 +200,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      startAutoplay();
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isCarouselVisible = entry.isIntersecting;
+          if (isCarouselVisible && !document.hidden) {
+            startAutoplay();
+          } else {
+            stopAutoplay();
+          }
+        });
+      }, { threshold: 0.2 }); // Ajustado a 20% para que reaccione más claramente
+
+      observer.observe(carouselSection);
     }
   }
 
@@ -199,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const EASE = [0.16, 1, 0.3, 1];
 
   if (!prefersReducedMotion) {
-    // Efecto de brillo interactivo 3D en tarjetas, siguiendo al cursor
     document.addEventListener('mousemove', (e) => {
       document.querySelectorAll('.card, .architecture-card').forEach((card) => {
         const rect = card.getBoundingClientRect();
@@ -208,7 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Entrada escalonada del Hero
     const heroEls = [
       '.hero-eyebrow',
       '.hero-title',
@@ -226,8 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { duration: 0.6, delay: stagger(0.12), ease: EASE }
     );
 
-    // Aparición escalonada al hacer scroll para grupos repetidos
-    // (tarjetas de Logros/Proyectos/Toolkit, línea de tiempo, educación)
     const revealGroups = [
       { container: '.cards-grid', items: ':scope > *' },
       { container: '.projects-scroll', items: ':scope > *' },
