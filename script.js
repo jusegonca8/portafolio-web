@@ -283,22 +283,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const sectionsToFade = document.querySelectorAll('.hero, .section');
 
     window.addEventListener('scroll', () => {
+      const triggerPoint = window.innerHeight * 0.35; // Empieza a desvanecer solo cuando el final de la sección llega al 35% superior de la pantalla
+
       sectionsToFade.forEach(section => {
         const rect = section.getBoundingClientRect();
-        
-        // Solo aplicamos el efecto si la sección está saliendo por arriba
-        if (rect.top < 0) {
-          // Calculamos qué porcentaje de la sección sigue visible
-          const visibleRatio = Math.max(0, rect.bottom / rect.height);
-          
-          // Aplicamos la opacidad progresiva
-          section.style.opacity = Math.pow(visibleRatio, 1.5);
-          
-          // Opcional: Un ligerísimo desenfoque (blur) para darle un toque más cinematográfico.
-          // Descomenta la siguiente línea si deseas probarlo:
-          // section.style.filter = `blur(${(1 - visibleRatio) * 5}px)`;
+
+        // Solo aplicamos el efecto cuando el FINAL de la sección está llegando arriba
+        if (rect.bottom < triggerPoint) {
+          const visibleRatio = Math.max(0, rect.bottom / triggerPoint);
+          section.style.opacity = Math.pow(visibleRatio, 1.2); // Curva de desvanecimiento más suave
         } else {
-          // Si la sección está en su lugar normal o entrando desde abajo, se ve perfecta
+          // Mientras el usuario esté leyendo el contenido, se mantiene 100% visible
           section.style.opacity = 1;
           section.style.filter = 'blur(0)';
         }
