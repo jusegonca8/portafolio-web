@@ -74,8 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('[data-carousel-next]');
     const dotsContainer = document.querySelector('[data-carousel-dots]');
 
+    // Función para hacer scroll interno calculando la posición exacta en pantalla
     const scrollToCard = (card, smooth = true) => {
-      const targetLeft = card.offsetLeft - (carouselTrack.clientWidth / 2) + (card.clientWidth / 2);
+      const trackRect = carouselTrack.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      
+      const targetLeft = carouselTrack.scrollLeft + (cardRect.left - trackRect.left) - (trackRect.width / 2) + (cardRect.width / 2);
+      
       carouselTrack.scrollTo({
         left: targetLeft,
         behavior: smooth ? 'smooth' : 'auto'
@@ -186,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (!carouselPrefersReducedMotion) {
-      // CORRECCIÓN: Ahora solo se pausa si el ratón entra en las TARJETAS (carouselTrack), no en toda la sección.
       carouselTrack.addEventListener('mouseenter', stopAutoplay);
       carouselTrack.addEventListener('mouseleave', startAutoplay);
       carouselTrack.addEventListener('focusin', stopAutoplay);
@@ -209,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
             stopAutoplay();
           }
         });
-      }, { threshold: 0.2 }); // Ajustado a 20% para que reaccione más claramente
+      }, { threshold: 0.2 }); 
 
       observer.observe(carouselSection);
     }
@@ -268,6 +272,34 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           { amount: 0.2 }
         );
+      });
+    });
+
+    // ==========================================================================
+    // Efecto de desvanecimiento (Fade-out) de secciones al hacer scroll
+    // ==========================================================================
+    const sectionsToFade = document.querySelectorAll('.hero, .section');
+
+    window.addEventListener('scroll', () => {
+      sectionsToFade.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        
+        // Solo aplicamos el efecto si la sección está saliendo por arriba
+        if (rect.top < 0) {
+          // Calculamos qué porcentaje de la sección sigue visible
+          const visibleRatio = Math.max(0, rect.bottom / rect.height);
+          
+          // Aplicamos la opacidad progresiva
+          section.style.opacity = Math.pow(visibleRatio, 1.5);
+          
+          // Opcional: Un ligerísimo desenfoque (blur) para darle un toque más cinematográfico.
+          // Descomenta la siguiente línea si deseas probarlo:
+          // section.style.filter = `blur(${(1 - visibleRatio) * 5}px)`;
+        } else {
+          // Si la sección está en su lugar normal o entrando desde abajo, se ve perfecta
+          section.style.opacity = 1;
+          section.style.filter = 'blur(0)';
+        }
       });
     });
   }

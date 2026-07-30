@@ -1014,14 +1014,19 @@ body:not(.light-mode) .theme-icon--moon {
 
   .nav {
     position: fixed;
-    inset: var(--header-height) 0 0 0;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
     background: var(--color-bg);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     transform: translateY(-110%);
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
     pointer-events: none;
-    z-index: 99;
+    z-index: 999;
+    overflow-y: auto;
   }
 
   .nav.is-open {
@@ -1032,25 +1037,30 @@ body:not(.light-mode) .theme-icon--moon {
 
   .nav-list {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    gap: 1.8rem;
     padding: 2rem;
   }
 
   .nav-list li {
     width: 100%;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: none;
+    text-align: center;
   }
 
   .nav-link {
-    display: block;
-    padding: 1.2rem 0;
-    font-size: 1.1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1.35rem;
+    font-weight: 600;
   }
 
   .nav-link--cta {
     display: inline-flex;
     margin-top: 1rem;
+    font-size: 1.15rem;
   }
 
   .nav-toggle.is-active span:nth-child(1) {
