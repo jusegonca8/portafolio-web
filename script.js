@@ -195,7 +195,9 @@ document.addEventListener('DOMContentLoaded', () => {
       carouselTrack.addEventListener('mouseleave', startAutoplay);
       carouselTrack.addEventListener('focusin', stopAutoplay);
       carouselTrack.addEventListener('focusout', startAutoplay);
-      
+      carouselTrack.addEventListener('touchstart', stopAutoplay, { passive: true });
+      carouselTrack.addEventListener('touchend', startAutoplay);
+
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
           stopAutoplay();
