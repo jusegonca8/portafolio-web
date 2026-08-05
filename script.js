@@ -1,4 +1,6 @@
 import { animate, inView, stagger } from 'https://cdn.jsdelivr.net/npm/motion@12.43.0/+esm';
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/+esm';
+import { Navigation, Pagination, EffectCoverflow, Autoplay } from 'https://cdn.jsdelivr.net/npm/swiper@11/modules/+esm';
 
 const THEME_STORAGE_KEY = 'jsg-portfolio-theme';
 const LANG_STORAGE_KEY = 'jsg-portfolio-lang';
@@ -219,6 +221,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
       observer.observe(carouselSection);
     }
+  }
+
+  const toolsSwiperEl = document.querySelector('.tools-swiper');
+  if (toolsSwiperEl) {
+    const toolsPrefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    new Swiper(toolsSwiperEl, {
+      modules: [Navigation, Pagination, EffectCoverflow, Autoplay],
+      effect: 'coverflow',
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      loop: true,
+      grabCursor: true,
+      coverflowEffect: {
+        rotate: 40,
+        stretch: 0,
+        depth: 150,
+        modifier: 1,
+        slideShadows: false,
+      },
+      navigation: {
+        prevEl: '.tools-swiper-btn--prev',
+        nextEl: '.tools-swiper-btn--next',
+      },
+      pagination: {
+        el: '.tools-swiper-pagination',
+        clickable: true,
+      },
+      autoplay: toolsPrefersReducedMotion ? false : {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+    });
   }
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

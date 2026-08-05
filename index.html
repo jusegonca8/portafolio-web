@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -433,6 +434,83 @@
             </ul>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL TOOLS - COVERFLOW 3D -->
+    <section class="section tools-showcase" id="technical-tools">
+      <div class="tools-showcase-stars" aria-hidden="true"></div>
+
+      <div class="container">
+        <p class="section-eyebrow" data-es="Stack en acción" data-en="Stack in Action">Stack en acción</p>
+        <h2 class="section-title">Technical Tools</h2>
+      </div>
+
+      <div class="tools-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide tool-slide">
+            <article class="tool-card" style="--tool-color: #61dafb;">
+              <img class="tool-card-logo" src="https://cdn.simpleicons.org/react/61DAFB" alt="React" loading="lazy" width="120" height="120">
+              <div class="tool-card-glass">
+                <h3 class="tool-card-name">React</h3>
+                <span class="tool-card-tag" data-es="Interfaces dinámicas" data-en="Dynamic UIs">Interfaces dinámicas</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide tool-slide">
+            <article class="tool-card" style="--tool-color: #339933;">
+              <img class="tool-card-logo" src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" loading="lazy" width="120" height="120">
+              <div class="tool-card-glass">
+                <h3 class="tool-card-name">Node.js</h3>
+                <span class="tool-card-tag" data-es="Backend &amp; APIs" data-en="Backend &amp; APIs">Backend &amp; APIs</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide tool-slide">
+            <article class="tool-card" style="--tool-color: #3776ab;">
+              <img class="tool-card-logo" src="https://cdn.simpleicons.org/python/3776AB" alt="Python" loading="lazy" width="120" height="120">
+              <div class="tool-card-glass">
+                <h3 class="tool-card-name">Python</h3>
+                <span class="tool-card-tag" data-es="Automatización &amp; datos" data-en="Automation &amp; data">Automatización &amp; datos</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide tool-slide">
+            <article class="tool-card" style="--tool-color: #2ead33;">
+              <img class="tool-card-logo" src="https://cdn.simpleicons.org/playwright/2EAD33" alt="Playwright" loading="lazy" width="120" height="120">
+              <div class="tool-card-glass">
+                <h3 class="tool-card-name">Playwright</h3>
+                <span class="tool-card-tag" data-es="Testing E2E" data-en="E2E Testing">Testing E2E</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-slide tool-slide">
+            <article class="tool-card" style="--tool-color: #4169e1;">
+              <img class="tool-card-logo" src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL" loading="lazy" width="120" height="120">
+              <div class="tool-card-glass">
+                <h3 class="tool-card-name">PostgreSQL</h3>
+                <span class="tool-card-tag" data-es="Persistencia de datos" data-en="Data persistence">Persistencia de datos</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button type="button" class="tools-swiper-btn tools-swiper-btn--prev" aria-label="Herramienta anterior">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"></path>
+          </svg>
+        </button>
+        <button type="button" class="tools-swiper-btn tools-swiper-btn--next" aria-label="Siguiente herramienta">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18l6-6-6-6"></path>
+          </svg>
+        </button>
+
+        <div class="tools-swiper-pagination swiper-pagination"></div>
       </div>
     </section>
 
