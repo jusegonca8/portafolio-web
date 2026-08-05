@@ -204,12 +204,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const EASE = [0.16, 1, 0.3, 1];
 
   if (!prefersReducedMotion) {
-    document.addEventListener('mousemove', (e) => {
-      document.querySelectorAll('.card, .architecture-card').forEach((card) => {
+    const hoverCards = document.querySelectorAll('.card, .architecture-card');
+    let mouseX = 0;
+    let mouseY = 0;
+    let mouseMoveTicking = false;
+
+    const updateHoverCards = () => {
+      hoverCards.forEach((card) => {
         const rect = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        card.style.setProperty('--mouse-x', `${mouseX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${mouseY - rect.top}px`);
       });
+      mouseMoveTicking = false;
+    };
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!mouseMoveTicking) {
+        mouseMoveTicking = true;
+        requestAnimationFrame(updateHoverCards);
+      }
     });
 
     const heroEls = [
