@@ -312,28 +312,5 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       });
     });
-
-    // ==========================================================================
-    // Efecto de desvanecimiento (Fade-out) de secciones al hacer scroll
-    // ==========================================================================
-    const sectionsToFade = document.querySelectorAll('.hero, .section');
-
-    window.addEventListener('scroll', () => {
-      const triggerPoint = window.innerHeight * 0.35; // Empieza a desvanecer solo cuando el final de la sección llega al 35% superior de la pantalla
-
-      sectionsToFade.forEach(section => {
-        const rect = section.getBoundingClientRect();
-
-        // Solo aplicamos el efecto cuando el FINAL de la sección está llegando arriba
-        if (rect.bottom < triggerPoint) {
-          const visibleRatio = Math.max(0, rect.bottom / triggerPoint);
-          section.style.opacity = Math.pow(visibleRatio, 1.2); // Curva de desvanecimiento más suave
-        } else {
-          // Mientras el usuario esté leyendo el contenido, se mantiene 100% visible
-          section.style.opacity = 1;
-          section.style.filter = 'blur(0)';
-        }
-      });
-    });
   }
 });
