@@ -1,6 +1,6 @@
 import { animate, inView, stagger } from 'https://cdn.jsdelivr.net/npm/motion@12.43.0/+esm';
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/+esm';
-import { Navigation, Pagination, EffectCoverflow, Autoplay } from 'https://cdn.jsdelivr.net/npm/swiper@11/modules/+esm';
+import { Navigation, Pagination, EffectCoverflow } from 'https://cdn.jsdelivr.net/npm/swiper@11/modules/+esm';
 
 const THEME_STORAGE_KEY = 'jsg-portfolio-theme';
 const LANG_STORAGE_KEY = 'jsg-portfolio-lang';
@@ -170,65 +170,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCarouselPadding();
     syncCarouselState();
-
-    // Autoplay con IntersectionObserver
-    const carouselSection = carouselTrack.closest('section') || carouselTrack;
-    const carouselPrefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const AUTOPLAY_DELAY = 4000;
-    
-    let autoplayTimer = null;
-    let isCarouselVisible = false;
-
-    const stopAutoplay = () => {
-      window.clearInterval(autoplayTimer);
-      autoplayTimer = null;
-    };
-
-    const startAutoplay = () => {
-      if (carouselPrefersReducedMotion || autoplayTimer || cards.length < 2 || !isCarouselVisible) return;
-      autoplayTimer = window.setInterval(() => {
-        const nextIndex = (getActiveIndex() + 1) % cards.length;
-        scrollToCard(cards[nextIndex], true);
-      }, AUTOPLAY_DELAY);
-    };
-
-    if (!carouselPrefersReducedMotion) {
-      carouselTrack.addEventListener('mouseenter', stopAutoplay);
-      carouselTrack.addEventListener('mouseleave', startAutoplay);
-      carouselTrack.addEventListener('focusin', stopAutoplay);
-      carouselTrack.addEventListener('focusout', startAutoplay);
-      carouselTrack.addEventListener('touchstart', stopAutoplay, { passive: true });
-      carouselTrack.addEventListener('touchend', startAutoplay);
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          stopAutoplay();
-        } else {
-          startAutoplay();
-        }
-      });
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          isCarouselVisible = entry.isIntersecting;
-          if (isCarouselVisible && !document.hidden) {
-            startAutoplay();
-          } else {
-            stopAutoplay();
-          }
-        });
-      }, { threshold: 0.2 }); 
-
-      observer.observe(carouselSection);
-    }
   }
 
   const toolsSwiperEl = document.querySelector('.tools-swiper');
   if (toolsSwiperEl) {
-    const toolsPrefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     new Swiper(toolsSwiperEl, {
-      modules: [Navigation, Pagination, EffectCoverflow, Autoplay],
+      modules: [Navigation, Pagination, EffectCoverflow],
       effect: 'coverflow',
       centeredSlides: true,
       slidesPerView: 'auto',
@@ -249,11 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el: '.tools-swiper-pagination',
         clickable: true,
       },
-      autoplay: toolsPrefersReducedMotion ? false : {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
+      autoplay: false,
     });
   }
 
