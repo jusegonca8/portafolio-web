@@ -2,21 +2,12 @@ import { animate, inView, stagger } from 'https://cdn.jsdelivr.net/npm/motion@12
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/+esm';
 import { Navigation, Pagination, EffectCoverflow } from 'https://cdn.jsdelivr.net/npm/swiper@11/modules/+esm';
 
-const THEME_STORAGE_KEY = 'jsg-portfolio-theme';
 const LANG_STORAGE_KEY = 'jsg-portfolio-lang';
-
-(() => {
-  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-mode');
-  }
-})();
 
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('nav-toggle');
   const nav = document.getElementById('nav');
   const navLinks = nav.querySelectorAll('.nav-link');
-  const themeToggle = document.getElementById('theme-toggle');
   const langToggle = document.getElementById('lang-toggle');
   const translatableEls = document.querySelectorAll('[data-es][data-en]');
 
@@ -37,19 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextLang = document.documentElement.lang === 'en' ? 'es' : 'en';
     localStorage.setItem(LANG_STORAGE_KEY, nextLang);
     applyLanguage(nextLang);
-  });
-
-  const applyThemeState = (isLight) => {
-    themeToggle.setAttribute('aria-pressed', String(isLight));
-    themeToggle.setAttribute('aria-label', isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro');
-  };
-
-  applyThemeState(document.body.classList.contains('light-mode'));
-
-  themeToggle.addEventListener('click', () => {
-    const isLight = document.body.classList.toggle('light-mode');
-    localStorage.setItem(THEME_STORAGE_KEY, isLight ? 'light' : 'dark');
-    applyThemeState(isLight);
   });
 
   const closeNav = () => {
