@@ -152,12 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const toolsSwiperEl = document.querySelector('.tools-swiper');
   if (toolsSwiperEl) {
-    new Swiper(toolsSwiperEl, {
+    const toolsSwiper = new Swiper(toolsSwiperEl, {
       modules: [Navigation, Pagination, EffectCoverflow],
       effect: 'coverflow',
       centeredSlides: true,
       slidesPerView: 'auto',
-      loop: true,
       grabCursor: true,
       coverflowEffect: {
         rotate: 40,
@@ -176,6 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       autoplay: false,
     });
+
+    toolsSwiper.update();
   }
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -237,9 +238,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const stopWatching = inView(
           group,
           () => {
+            // Solo se anima el desplazamiento, nunca la opacidad: el contenido
+            // no debe depender de que una animación termine para ser visible.
             animate(
               children,
-              { opacity: [0, 1], y: [24, 0] },
+              { y: [24, 0] },
               { duration: 0.6, delay: stagger(0.08), ease: EASE }
             );
             stopWatching();

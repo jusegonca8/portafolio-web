@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>World Cup Timezone Watch Planner 2026</title>
+<meta name="description" content="Turn the 2026 World Cup schedule into your personal local watch plan." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0a0f1a;
+  --bg-alt:#121828;
+  --panel:#141b2c;
+  --panel-2:#161d30;
+  --ink:#e8edf5;
+  --muted:#7a8699;
+  --faint:#5a6478;
+  --line:rgba(255,255,255,.07);
+  --line-2:rgba(255,255,255,.12);
+  --cyan:#4fc3f7;
+  --cyan-dim:rgba(79,195,247,.14);
+  --green:#4ade80;
+
+  --display:"Rajdhani",system-ui,sans-serif;
+  --tech:"Orbitron",system-ui,sans-serif;
+  --mono:"Share Tech Mono",ui-monospace,monospace;
+
+  --nav-h:56px;
+  --wrap:1180px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--display);
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+
+.wrap{width:min(var(--wrap),calc(100% - 48px));margin-inline:auto}
+button{font-family:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input{font-family:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;height:var(--nav-h);
+  background:rgba(10,15,26,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:9px}
+.brand .mark{
+  width:26px;height:26px;border-radius:7px;
+  background:var(--cyan-dim);border:1px solid rgba(79,195,247,.3);
+  display:grid;place-items:center;color:var(--cyan);
+}
+.brand .mark svg{width:14px;height:14px}
+.brand .word{font-family:var(--tech);font-weight:700;font-size:15px;letter-spacing:.04em}
+.nav-links{display:flex;gap:26px}
+.nav-links a{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;padding-bottom:3px;border-bottom:1.5px solid transparent;
+  transition:color .25s,border-color .25s;
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.on{color:var(--cyan);border-bottom-color:var(--cyan)}
+.clock{
+  display:flex;align-items:center;gap:7px;
+  border:1px solid var(--line);border-radius:999px;padding:5px 12px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);
+}
+.clock svg{width:11px;height:11px;color:var(--faint)}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100vh;padding-top:var(--nav-h);display:flex;align-items:center;overflow:hidden}
+#particles{position:absolute;inset:0;z-index:0}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:56px 0 90px}
+
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--line-2);border-radius:999px;padding:6px 14px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);
+}
+.pill .led{width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+
+h1{
+  margin-top:22px;
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(38px,4.6vw,64px);line-height:1.02;letter-spacing:-.005em;
+}
+h1 .accent{color:var(--cyan)}
+
+.lede{margin-top:20px;font-size:17px;font-weight:400;line-height:1.5;color:#b9c3d4;max-width:34ch}
+.lede b{color:var(--cyan);font-weight:600}
+.sub{margin-top:12px;font-size:13.5px;line-height:1.5;color:var(--faint);max-width:38ch}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  border-radius:6px;padding:11px 18px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  transition:background .25s,border-color .25s,color .25s;
+}
+.btn svg{width:13px;height:13px}
+.btn-primary{background:var(--cyan);color:#06121c;font-weight:700}
+.btn-primary:hover{background:#7ad3fa}
+.btn-ghost{border:1px solid var(--line-2);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+
+.stats{
+  display:flex;gap:34px;margin-top:34px;padding-top:26px;
+  border-top:1px solid var(--line);max-width:420px;
+}
+.stat .n{font-family:var(--tech);font-weight:800;font-size:24px;color:var(--cyan)}
+.stat .l{margin-top:3px;font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+
+/* globe */
+.globe-col{display:flex;flex-direction:column;align-items:center;gap:14px}
+.globe-hint{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.globe-box{position:relative;width:100%;max-width:520px;aspect-ratio:1}
+#globe{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+#globe.dragging{cursor:grabbing}
+.globe-tip{
+  position:absolute;pointer-events:none;z-index:3;
+  transform:translate(-50%,-140%);
+  background:rgba(10,15,26,.94);border:1px solid rgba(79,195,247,.35);border-radius:5px;
+  padding:5px 9px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--cyan);
+  white-space:nowrap;opacity:0;transition:opacity .18s;
+}
+.globe-tip.on{opacity:1}
+
+.scroll-cue{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:1;
+  font-family:var(--mono);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);
+  text-align:center;
+}
+.scroll-cue span{display:block;margin-top:5px;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ============ MARQUEE ============ */
+.marquee{
+  border-block:1px solid var(--line);
+  background:rgba(255,255,255,.015);
+  overflow:hidden;padding:11px 0;
+}
+.marquee-track{display:flex;width:max-content;animation:slide 46s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.marquee-track span{
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
+  padding:0 22px;display:inline-flex;align-items:center;gap:22px;
+}
+.marquee-track span::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--cyan);opacity:.5}
+
+/* ============ SECTIONS ============ */
+section{padding:74px 0;scroll-margin-top:calc(var(--nav-h) + 18px)}
+.band{background:var(--bg-alt)}
+.eyebrow{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+}
+.eyebrow svg{width:12px;height:12px;color:var(--cyan)}
+h2{
+  margin-top:12px;
+  font-family:var(--display);font-weight:700;font-size:clamp(28px,3.2vw,40px);line-height:1.05;
+}
+h2 .accent{color:var(--cyan)}
+h2 .accent-green{color:var(--green)}
+.sec-sub{margin-top:8px;font-size:14.5px;color:var(--muted)}
+
+/* timezone picker */
+.tz-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
+.panel{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:20px}
+.panel-title{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+}
+.panel-title svg{width:13px;height:13px;color:var(--cyan)}
+
+.tz-empty{min-height:210px;display:grid;place-items:center;text-align:center;padding:20px}
+.tz-empty .ring{
+  width:52px;height:52px;border-radius:50%;border:1px dashed var(--line-2);
+  display:grid;place-items:center;color:var(--faint);margin:0 auto 14px;
+}
+.tz-empty .ring svg{width:20px;height:20px}
+.tz-empty p{font-size:14px;color:var(--faint)}
+
+.tz-active{min-height:210px;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:14px 4px}
+.tz-active .city{font-family:var(--display);font-weight:700;font-size:34px;line-height:1.1}
+.tz-active .zone{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted)}
+.tz-active .now{font-family:var(--tech);font-weight:700;font-size:30px;color:var(--cyan);margin-top:10px}
+.tz-active .now-l{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.tz-clear{
+  margin-top:16px;align-self:flex-start;
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+  border:1px solid var(--line);border-radius:5px;padding:6px 11px;transition:color .25s,border-color .25s;
+}
+.tz-clear:hover{color:var(--ink);border-color:var(--line-2)}
+
+.search-wrap{position:relative;margin-top:14px}
+.search-wrap > svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--faint)}
+#tzSearch{
+  width:100%;background:var(--panel-2);border:1px solid var(--line);border-radius:7px;
+  padding:12px 14px 12px 36px;color:var(--ink);font-size:14px;
+}
+#tzSearch::placeholder{color:var(--faint)}
+#tzSearch:focus{outline:none;border-color:rgba(79,195,247,.45)}
+
+.results{margin-top:8px;border:1px solid var(--line);border-radius:7px;overflow:hidden;display:none}
+.results.on{display:block}
+.results button{
+  display:flex;justify-content:space-between;width:100%;padding:10px 14px;font-size:14px;
+  border-bottom:1px solid var(--line);transition:background .2s;
+}
+.results button:last-child{border-bottom:0}
+.results button:hover{background:rgba(79,195,247,.07)}
+.results .off{font-family:var(--mono);font-size:11px;color:var(--faint)}
+
+.quick-title{margin-top:26px}
+.quick{display:grid;grid-template-columns:1fr 1fr;margin-top:12px;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+.quick button{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:12px 14px;font-size:14px;color:#c7d0de;
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  transition:background .2s,color .2s;
+}
+.quick button:nth-child(2n){border-right:0}
+.quick button:nth-last-child(-n+2){border-bottom:0}
+.quick button:hover{background:rgba(79,195,247,.07);color:var(--ink)}
+.quick .off{font-family:var(--mono);font-size:11px;color:var(--faint)}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--line);border-radius:7px;background:var(--panel);
+  padding:9px 15px;font-size:13.5px;font-weight:500;color:var(--muted);
+  transition:border-color .25s,color .25s,background .25s;
+}
+.chip svg{width:13px;height:13px}
+.chip:hover{color:var(--ink);border-color:var(--line-2)}
+.chip.on{color:var(--cyan);border-color:rgba(79,195,247,.5);background:rgba(79,195,247,.08)}
+
+/* empty state */
+.empty{padding:64px 20px;text-align:center}
+.empty .ring{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--faint);margin:0 auto 16px}
+.empty .ring svg{width:19px;height:19px}
+.empty p{font-size:14.5px;color:var(--muted)}
+.empty small{display:block;margin-top:7px;font-size:12.5px;color:var(--faint)}
+
+/* match list */
+.day{margin-top:30px}
+.day-head{display:flex;align-items:center;gap:14px}
+.day-head .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex:none}
+.day-head .d{font-family:var(--display);font-weight:600;font-size:16px;white-space:nowrap}
+.day-head .rule{flex:1;height:1px;background:var(--line)}
+.day-head .c{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);white-space:nowrap}
+
+.match{
+  display:flex;align-items:center;gap:16px;
+  border:1px solid var(--line);border-radius:8px;background:var(--panel);
+  padding:12px 16px;margin-top:10px;
+  transition:border-color .25s,background .25s;
+}
+.match:hover{border-color:var(--line-2);background:var(--panel-2)}
+.match .when{min-width:74px;text-align:center;flex:none}
+.match .when .t{font-family:var(--tech);font-weight:700;font-size:15px;color:var(--cyan)}
+.match .when .p{margin-top:2px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.match .sep{width:5px;height:5px;border-radius:50%;background:var(--line-2);flex:none}
+.match .who{flex:1;min-width:0}
+.match .teams{font-size:14.5px;font-weight:500}
+.match .teams .code{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--muted);margin-right:5px}
+.match .teams .vs{color:var(--faint);font-size:12.5px;margin:0 7px}
+.match .venue{display:flex;align-items:center;gap:5px;margin-top:3px;font-size:12px;color:var(--faint)}
+.match .venue svg{width:11px;height:11px}
+.match .grp{
+  font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--muted);
+  border:1px solid var(--line);border-radius:4px;padding:4px 8px;flex:none;
+}
+.match .save{
+  width:30px;height:30px;border-radius:6px;border:1px solid var(--line);
+  display:grid;place-items:center;color:var(--faint);flex:none;
+  transition:color .25s,border-color .25s;
+}
+.match .save svg{width:14px;height:14px}
+.match .save:hover{color:var(--ink);border-color:var(--line-2)}
+.match .save.on{color:var(--green);border-color:rgba(74,222,128,.45);background:rgba(74,222,128,.09)}
+.match.late{border-left:2px solid rgba(79,195,247,.5)}
+
+/* watchlist */
+.watch-box{margin-top:26px;border:1px solid var(--line);border-radius:10px;background:var(--panel);min-height:200px}
+.watch-box .match{border-radius:0;border-inline:0;border-top:0;margin:0;background:transparent}
+.watch-box .match:first-child{border-top:0}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:var(--bg-alt);padding:44px 0 34px}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1.4fr;gap:34px}
+.foot p{margin-top:14px;font-size:13.5px;line-height:1.55;color:var(--muted);max-width:34ch}
+.foot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:400}
+.foot ul{list-style:none;margin-top:14px;display:grid;gap:9px}
+.foot a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .25s}
+.foot a:hover{color:var(--cyan)}
+.foot .about{font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:14px}
+.foot .meta{
+  display:flex;align-items:center;gap:9px;margin-top:14px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--faint);
+}
+.foot .meta svg{width:12px;height:12px}
+
+/* responsive */
+@media (max-width:940px){
+  .hero .wrap{grid-template-columns:1fr;gap:44px;padding-bottom:70px}
+  .globe-col{order:-1}
+  .globe-box{max-width:400px}
+  .tz-grid,.foot{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media (max-width:620px){
+  .wrap{width:calc(100% - 32px)}
+  .stats{flex-wrap:wrap;gap:22px}
+  .quick{grid-template-columns:1fr}
+  .quick button{border-right:0}
+  .quick button:nth-last-child(2){border-bottom:1px solid var(--line)}
+  .match{flex-wrap:wrap;gap:10px}
+  .match .who{flex-basis:100%;order:3}
+  section{padding:54px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/><path d="M10 19h4M12 14v5"/></svg></span>
+      <span class="word">WC2026</span>
+    </div>
+    <div class="nav-links">
+      <a href="#home" class="on">Home</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#watchplan">Watch Plan</a>
+      <a href="#watchlist">Watchlist</a>
+    </div>
+    <div class="clock">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span id="navClock">--:--:--</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="home">
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="pill"><span class="led"></span>2026 World Cup · Global Fan Planner</div>
+      <h1>World Cup<br /><span class="accent">Timezone</span><br />Watch<br />Planner</h1>
+      <p class="lede">Never miss a kickoff. Turn the <b>2026 World Cup</b> schedule into your personal local watch plan.</p>
+      <p class="sub">Pick your timezone directly on the globe. Every match instantly converts to your local time.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" data-jump="#timezone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+          Set my timezone
+        </button>
+        <button class="btn btn-ghost" data-jump="#schedule">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Explore matchdays
+        </button>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n" id="statMatches">0</div><div class="l">Matches</div></div>
+        <div class="stat"><div class="n">48</div><div class="l">Teams</div></div>
+        <div class="stat"><div class="n">16</div><div class="l">Host cities</div></div>
+        <div class="stat"><div class="n">40+</div><div class="l">Timezones</div></div>
+      </div>
+    </div>
+
+    <div class="globe-col">
+      <div class="globe-hint">← Drag to rotate · Click to select →</div>
+      <div class="globe-box">
+        <canvas id="globe"></canvas>
+        <div class="globe-tip" id="globeTip"></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll<span>↓</span></div>
+</header>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+<!-- ================= TIMEZONE ================= -->
+<section id="timezone">
+  <div class="wrap">
+    <div class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+      Local conversion
+    </div>
+    <h2>Set Your <span class="accent">Timezone</span></h2>
+    <p class="sec-sub">Every kickoff below converts to the zone you pick.</p>
+
+    <div class="tz-grid">
+      <div class="panel">
+        <div class="panel-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+          Your timezone
+        </div>
+        <div id="tzPanel">
+          <div class="tz-empty">
+            <div>
+              <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+              <p>Click on the globe above or search below to set your timezone</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          Search city / timezone
+        </div>
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          <input id="tzSearch" type="text" placeholder="Type a city or UTC offset" autocomplete="off" />
+        </div>
+        <div class="results" id="tzResults"></div>
+
+        <div class="panel-title quick-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Quick select
+        </div>
+        <div class="quick" id="tzQuick"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WATCH PLAN ================= -->
+<section class="band" id="watchplan">
+  <div class="wrap">
+    <div class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+      Match schedule
+    </div>
+    <h2>Your <span class="accent">Local</span> Watch Plan</h2>
+    <p class="sec-sub">Select a timezone above to see local kickoff times</p>
+
+    <div class="filters" id="filters"></div>
+    <div id="planList"></div>
+  </div>
+</section>
+
+<!-- ================= SCHEDULE ================= -->
+<section id="schedule">
+  <div class="wrap">
+    <div class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M10 19h4M12 14v5"/></svg>
+      Matchday timeline
+    </div>
+    <h2>Day-by-Day <span class="accent">Schedule</span></h2>
+    <p class="sec-sub" id="schedSub">All matches grouped by your local date</p>
+    <div id="schedList"></div>
+  </div>
+</section>
+
+<!-- ================= WATCHLIST ================= -->
+<section class="band" id="watchlist">
+  <div class="wrap">
+    <div class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M10 19h4M12 14v5"/></svg>
+      Personal watch plan
+    </div>
+    <h2>My <span class="accent-green">Watchlist</span></h2>
+    <p class="sec-sub" id="watchSub">0 matches saved to your plan</p>
+    <div class="watch-box" id="watchList"></div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand">
+        <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M10 19h4M12 14v5"/></svg></span>
+        <span class="word">WC2026</span>
+      </div>
+      <p>World Cup Timezone Watch Planner — your global fan toolkit for the 2026 FIFA World Cup.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#watchplan">Watch Plan</a></li>
+        <li><a href="#timezone">Set Timezone</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About</h4>
+      <p class="about">Schedule data is for demonstration purposes. Real match schedule will be updated closer to the tournament.</p>
+      <div class="meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+        2026 FIFA World Cup · USA · Canada · Mexico
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ==================================================================
+   1. TUS DATOS — edita solo este bloque
+   ==================================================================
+   Cada partido:
+     kickoff : hora de inicio en UTC, formato ISO con la Z final
+     home/away : { code: "MX", name: "Mexico" }   code = 2 letras
+     venue   : ciudad sede
+     group   : etiqueta que se muestra en el chip
+     must    : true si quieres que aparezca en el filtro "Must Watch"
+   Añade tantos objetos como quieras; la página se regenera sola.
+================================================================== */
+const MATCHES = [
+  { kickoff:"2026-06-11T19:00:00Z", home:{code:"MX",name:"Mexico"},        away:{code:"ZA",name:"South Africa"},  venue:"Mexico City",  group:"Grp A", must:true  },
+  { kickoff:"2026-06-11T23:00:00Z", home:{code:"KR",name:"South Korea"},   away:{code:"CZ",name:"Czech Republic"},venue:"Guadalajara",  group:"Grp A", must:false },
+  { kickoff:"2026-06-12T18:00:00Z", home:{code:"CA",name:"Canada"},        away:{code:"BA",name:"Bosnia"},        venue:"Toronto",      group:"Grp B", must:false },
+  { kickoff:"2026-06-12T22:00:00Z", home:{code:"US",name:"United States"}, away:{code:"PY",name:"Paraguay"},      venue:"Los Angeles",  group:"Grp B", must:true  },
+  { kickoff:"2026-06-13T19:00:00Z", home:{code:"KR",name:"South Korea"},   away:{code:"MX",name:"Mexico"},        venue:"Guadalajara",  group:"Grp A", must:false },
+  { kickoff:"2026-06-13T23:00:00Z", home:{code:"CH",name:"Switzerland"},   away:{code:"BA",name:"Bosnia"},        venue:"Los Angeles",  group:"Grp B", must:false },
+  { kickoff:"2026-06-14T02:00:00Z", home:{code:"CA",name:"Canada"},        away:{code:"QA",name:"Qatar"},         venue:"Vancouver",    group:"Grp B", must:true  }
+];
+
+/* Fecha de referencia para el filtro "Upcoming".
+   Déjalo en null para usar la fecha real de hoy. */
+const REFERENCE_DATE = null;
+
+/* Países de la marquesina */
+const COUNTRIES = ["England","Germany","Spain","Portugal","Netherlands","Italy","USA","Mexico","Japan","Morocco","Senegal","South Korea","Australia","Croatia","Uruguay","Brazil","Argentina","France","Canada","Belgium"];
+
+/* Ciudades del globo — lat, lon y offset UTC en horas */
+const CITIES = [
+  {name:"New York",     lat:40.71,  lon:-74.01,  off:-4},
+  {name:"Los Angeles",  lat:34.05,  lon:-118.24, off:-7},
+  {name:"Mexico City",  lat:19.43,  lon:-99.13,  off:-6},
+  {name:"Toronto",      lat:43.65,  lon:-79.38,  off:-4},
+  {name:"Vancouver",    lat:49.28,  lon:-123.12, off:-7},
+  {name:"Guadalajara",  lat:20.66,  lon:-103.35, off:-6},
+  {name:"Bogotá",       lat:4.71,   lon:-74.07,  off:-5},
+  {name:"Lima",         lat:-12.05, lon:-77.04,  off:-5},
+  {name:"São Paulo",    lat:-23.55, lon:-46.63,  off:-3},
+  {name:"Buenos Aires", lat:-34.60, lon:-58.38,  off:-3},
+  {name:"London",       lat:51.51,  lon:-0.13,   off:1},
+  {name:"Madrid",       lat:40.42,  lon:-3.70,   off:2},
+  {name:"Paris",        lat:48.86,  lon:2.35,    off:2},
+  {name:"Berlin",       lat:52.52,  lon:13.40,   off:2},
+  {name:"Rome",         lat:41.90,  lon:12.50,   off:2},
+  {name:"Lagos",        lat:6.52,   lon:3.38,    off:1},
+  {name:"Cairo",        lat:30.04,  lon:31.24,   off:3},
+  {name:"Johannesburg", lat:-26.20, lon:28.05,   off:2},
+  {name:"Moscow",       lat:55.76,  lon:37.62,   off:3},
+  {name:"Dubai",        lat:25.20,  lon:55.27,   off:4},
+  {name:"Mumbai",       lat:19.08,  lon:72.88,   off:5.5},
+  {name:"Singapore",    lat:1.35,   lon:103.82,  off:8},
+  {name:"Shanghai",     lat:31.23,  lon:121.47,  off:8},
+  {name:"Seoul",        lat:37.57,  lon:126.98,  off:9},
+  {name:"Tokyo",        lat:35.68,  lon:139.69,  off:9},
+  {name:"Sydney",       lat:-33.87, lon:151.21,  off:10},
+  {name:"Auckland",     lat:-36.85, lon:174.76,  off:12}
+];
+
+const QUICK = ["New York","Los Angeles","London","Paris","São Paulo","Dubai","Singapore","Tokyo","Sydney","Mexico City"];
+
+/* ==================================================================
+   2. MAPA DE TIERRA — rejilla 5°, fila 0 = 90°N, columna 0 = 180°W
+      Cada par [inicio,fin] es un tramo de tierra en esa fila.
+================================================================== */
+const LAND = [
+  [], [[26,30]], [[9,21],[25,31],[55,62]], [[6,24],[25,31],[40,43],[45,70]],
+  [[0,8],[7,24],[26,31],[33,33],[38,43],[44,71]],
+  [[0,7],[6,25],[27,31],[33,33],[37,43],[44,71]],
+  [[0,6],[5,25],[34,35],[37,42],[43,71]],
+  [[3,25],[33,35],[36,43],[44,71]],
+  [[3,26],[33,45],[46,71]],
+  [[4,26],[33,35],[36,44],[45,71]],
+  [[4,26],[33,35],[36,42],[43,46],[47,71]],
+  [[5,26],[33,46],[47,70]],
+  [[7,25],[33,48],[49,52],[54,66],[68,69]],
+  [[8,22],[23,25],[33,49],[49,53],[55,65]],
+  [[9,21],[22,26],[32,46],[49,53],[56,63]],
+  [[12,21],[23,28],[32,47],[50,52],[56,62]],
+  [[20,27],[33,46],[56,62]],
+  [[20,30],[34,46],[55,64]],
+  [[21,31],[34,45],[56,65]],
+  [[21,31],[34,44],[57,66]],
+  [[21,31],[34,44],[59,67]],
+  [[21,31],[34,43],[45,45],[58,68]],
+  [[22,31],[34,42],[45,45],[57,68]],
+  [[23,30],[34,41],[57,68]],
+  [[24,29],[34,40],[58,66]],
+  [[25,28],[69,70]],
+  [[25,27],[69,70]],
+  [[25,27]], [[26,26]], [], [],
+  [[10,60]], [[4,68]], [[2,70]], [[2,70]], [[8,64]]
+];
+
+/* ==================================================================
+   3. ESTADO
+================================================================== */
+let tz = null;                 // {name, off}
+let filter = "all";
+const saved = new Set();       // índices guardados (en memoria)
+
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2,"0");
+const now = () => REFERENCE_DATE ? new Date(REFERENCE_DATE) : new Date();
+
+/* hora local del partido según el offset elegido */
+function localParts(iso, off){
+  const d = new Date(new Date(iso).getTime() + off*3600000);
+  return {
+    h:d.getUTCHours(), m:d.getUTCMinutes(),
+    date:`${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-${pad(d.getUTCDate())}`,
+    label:d.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric",timeZone:"UTC"})
+  };
+}
+const partOfDay = h => h>=5&&h<12 ? "Morning" : h>=12&&h<18 ? "Afternoon" : h>=18&&h<23 ? "Evening" : "Late Night";
+const isLate = h => h>=23 || h<6;
+const offLabel = o => "UTC" + (o>=0?"+":"−") + (Number.isInteger(o) ? Math.abs(o) : Math.abs(o).toFixed(1));
+
+/* ==================================================================
+   4. GLOBO INTERACTIVO
+================================================================== */
+(function globe(){
+  const cv = $("globe"), ctx = cv.getContext("2d"), tip = $("globeTip");
+  let W=0, H=0, R=0, cx=0, cy=0;
+  let rotY = -0.6, rotX = 0.42, spin = .0022;
+  let drag = false, lastX = 0, lastY = 0, hover = null;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* puntos de tierra a partir de la rejilla */
+  const dots = [];
+  LAND.forEach((spans,row)=>{
+    const lat = 87.5 - row*5;
+    spans.forEach(([a,b])=>{
+      for(let c=a;c<=b;c++){
+        const lon = -180 + c*5 + 2.5;
+        // densidad extra cerca del ecuador para compensar la proyección
+        dots.push({lat,lon});
+        if(Math.abs(lat)<55) dots.push({lat:lat-2.5, lon:lon+2.5});
+      }
+    });
+  });
+
+  const toXYZ = (lat,lon)=>{
+    const a = lat*Math.PI/180, o = lon*Math.PI/180;
+    return [Math.cos(a)*Math.sin(o), Math.sin(a), Math.cos(a)*Math.cos(o)];
+  };
+  function project(lat,lon){
+    let [x,y,z] = toXYZ(lat,lon);
+    let x1 =  x*Math.cos(rotY) + z*Math.sin(rotY);
+    let z1 = -x*Math.sin(rotY) + z*Math.cos(rotY);
+    let y1 =  y*Math.cos(rotX) - z1*Math.sin(rotX);
+    let z2 =  y*Math.sin(rotX) + z1*Math.cos(rotX);
+    return [cx + x1*R, cy - y1*R, z2];
+  }
+
+  function size(){
+    const r = cv.getBoundingClientRect();
+    const dpr = Math.min(devicePixelRatio||1, 2);
+    W = r.width; H = r.height;
+    cv.width = W*dpr; cv.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    R = Math.min(W,H)*0.40; cx = W/2; cy = H/2;
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+
+    // halo
+    const halo = ctx.createRadialGradient(cx,cy,R*0.86,cx,cy,R*1.16);
+    halo.addColorStop(0,"rgba(79,195,247,0)");
+    halo.addColorStop(.55,"rgba(79,195,247,.13)");
+    halo.addColorStop(1,"rgba(79,195,247,0)");
+    ctx.fillStyle = halo;
+    ctx.beginPath(); ctx.arc(cx,cy,R*1.16,0,7); ctx.fill();
+
+    // esfera
+    ctx.fillStyle = "rgba(9,14,26,.92)";
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,7); ctx.fill();
+    ctx.strokeStyle = "rgba(79,195,247,.30)"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,7); ctx.stroke();
+
+    // tierra
+    for(const d of dots){
+      const [x,y,z] = project(d.lat,d.lon);
+      if(z <= 0.02) continue;
+      const a = 0.16 + z*0.52;
+      ctx.fillStyle = `rgba(120,170,225,${a.toFixed(3)})`;
+      const s = 0.9 + z*0.75;
+      ctx.fillRect(x-s/2, y-s/2, s, s);
+    }
+
+    // ciudades
+    hoverCandidates.length = 0;
+    for(const c of CITIES){
+      const [x,y,z] = project(c.lat,c.lon);
+      if(z <= 0.05) continue;
+      hoverCandidates.push({c,x,y,z});
+      const on = tz && tz.name === c.name;
+      const r = on ? 4 : 2.4;
+      ctx.fillStyle = on ? "#4ade80" : "#7fd8ff";
+      ctx.shadowColor = on ? "rgba(74,222,128,.9)" : "rgba(127,216,255,.85)";
+      ctx.shadowBlur = on ? 14 : 8;
+      ctx.beginPath(); ctx.arc(x,y,r,0,7); ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+  }
+  const hoverCandidates = [];
+
+  function tick(){
+    if(!drag && !reduce) rotY += spin;
+    draw();
+    requestAnimationFrame(tick);
+  }
+
+  function nearest(px,py){
+    let best = null, bd = 16;
+    for(const h of hoverCandidates){
+      const d = Math.hypot(h.x-px, h.y-py);
+      if(d < bd){ bd = d; best = h; }
+    }
+    return best;
+  }
+
+  cv.addEventListener("pointerdown",e=>{
+    drag = true; lastX = e.clientX; lastY = e.clientY;
+    cv.classList.add("dragging"); cv.setPointerCapture(e.pointerId);
+  });
+  cv.addEventListener("pointermove",e=>{
+    const r = cv.getBoundingClientRect();
+    const px = e.clientX - r.left, py = e.clientY - r.top;
+    if(drag){
+      rotY += (e.clientX - lastX) * 0.006;
+      rotX = Math.max(-1.1, Math.min(1.1, rotX + (e.clientY - lastY) * 0.005));
+      lastX = e.clientX; lastY = e.clientY;
+      tip.classList.remove("on");
+      return;
+    }
+    const h = nearest(px,py);
+    hover = h;
+    if(h){
+      tip.textContent = `${h.c.name} · ${offLabel(h.c.off)}`;
+      tip.style.left = h.x + "px"; tip.style.top = h.y + "px";
+      tip.classList.add("on");
+      cv.style.cursor = "pointer";
+    }else{
+      tip.classList.remove("on");
+      cv.style.cursor = "grab";
+    }
+  });
+  const stop = e => { drag = false; cv.classList.remove("dragging"); };
+  cv.addEventListener("pointerup",e=>{
+    stop(e);
+    const r = cv.getBoundingClientRect();
+    const h = nearest(e.clientX - r.left, e.clientY - r.top);
+    if(h) setTz(h.c);
+  });
+  cv.addEventListener("pointerleave",e=>{ stop(e); tip.classList.remove("on"); });
+  cv.addEventListener("pointercancel",stop);
+
+  addEventListener("resize",size);
+  size(); tick();
+})();
+
+/* ==================================================================
+   5. PARTÍCULAS DEL HERO
+================================================================== */
+(function particles(){
+  const cv = $("particles"), ctx = cv.getContext("2d");
+  const colors = ["#4fc3f7","#4ade80","#f7d94f","#ffffff","#f78d4f"];
+  let W,H,dots=[];
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function size(){
+    const dpr = Math.min(devicePixelRatio||1,2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W*dpr; cv.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    dots = Array.from({length:Math.round(W*H/16000)},()=>({
+      x:Math.random()*W, y:Math.random()*H,
+      s:1+Math.random()*2.4,
+      vx:(Math.random()-.5)*.16, vy:(Math.random()-.5)*.16,
+      a:.15+Math.random()*.45,
+      c:colors[(Math.random()*colors.length)|0]
+    }));
+  }
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    for(const d of dots){
+      if(!reduce){
+        d.x += d.vx; d.y += d.vy;
+        if(d.x<0)d.x=W; if(d.x>W)d.x=0; if(d.y<0)d.y=H; if(d.y>H)d.y=0;
+      }
+      ctx.globalAlpha = d.a; ctx.fillStyle = d.c;
+      ctx.fillRect(d.x, d.y, d.s, d.s);
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(frame);
+  }
+  addEventListener("resize",size);
+  size(); frame();
+})();
+
+/* ==================================================================
+   6. RELOJ Y MARQUESINA
+================================================================== */
+setInterval(()=>{
+  const d = tz ? new Date(Date.now() + tz.off*3600000) : new Date();
+  $("navClock").textContent = tz
+    ? `${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}:${pad(d.getUTCSeconds())}`
+    : `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+},1000);
+
+$("marquee").innerHTML = [...COUNTRIES,...COUNTRIES].map(c=>`<span>${c}</span>`).join("");
+$("statMatches").textContent = MATCHES.length;
+
+/* ==================================================================
+   7. SELECTOR DE HUSO
+================================================================== */
+$("tzQuick").innerHTML = QUICK.map(n=>{
+  const c = CITIES.find(x=>x.name===n);
+  return c ? `<button data-city="${c.name}">${c.name}<span class="off">${offLabel(c.off)}</span></button>` : "";
+}).join("");
+
+function setTz(city){
+  tz = {name:city.name, off:city.off};
+  const d = new Date(Date.now() + tz.off*3600000);
+  $("tzPanel").innerHTML = `
+    <div class="tz-active">
+      <div class="city">${tz.name}</div>
+      <div class="zone">${offLabel(tz.off)}</div>
+      <div class="now">${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}</div>
+      <div class="now-l">Local time now</div>
+      <button class="tz-clear" id="tzClear">Change timezone</button>
+    </div>`;
+  $("tzClear").onclick = clearTz;
+  $("tzSearch").value = "";
+  $("tzResults").classList.remove("on");
+  render();
+}
+function clearTz(){
+  tz = null;
+  $("tzPanel").innerHTML = `
+    <div class="tz-empty"><div>
+      <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+      <p>Click on the globe above or search below to set your timezone</p>
+    </div></div>`;
+  render();
+}
+
+document.addEventListener("click",e=>{
+  const q = e.target.closest("[data-city]");
+  if(q){ const c = CITIES.find(x=>x.name===q.dataset.city); if(c) setTz(c); }
+  const j = e.target.closest("[data-jump]");
+  if(j) scrollToId(j.dataset.jump.slice(1));
+});
+
+$("tzSearch").addEventListener("input",e=>{
+  const q = e.target.value.trim().toLowerCase();
+  const box = $("tzResults");
+  if(!q){ box.classList.remove("on"); return; }
+  const hits = CITIES.filter(c =>
+    c.name.toLowerCase().includes(q) || offLabel(c.off).toLowerCase().includes(q)
+  ).slice(0,6);
+  box.innerHTML = hits.length
+    ? hits.map(c=>`<button data-city="${c.name}">${c.name}<span class="off">${offLabel(c.off)}</span></button>`).join("")
+    : `<button disabled style="color:var(--faint)">No match for “${q}”</button>`;
+  box.classList.add("on");
+});
+
+/* ==================================================================
+   8. FILTROS Y LISTAS
+================================================================== */
+const FILTERS = [
+  {id:"all",   label:"Upcoming",        icon:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'},
+  {id:"week",  label:"This Week",       icon:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'},
+  {id:"must",  label:"Must Watch",      icon:'<path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6L12 16.8 6.6 19.6l1.2-6L3.3 9.4l6.1-.8L12 3z"/>'},
+  {id:"late",  label:"Late Night Risk", icon:'<path d="M20 14a8 8 0 01-10-10 8 8 0 1010 10z"/>'}
+];
+$("filters").innerHTML = FILTERS.map(f=>
+  `<button class="chip${f.id==="all"?" on":""}" data-f="${f.id}">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">${f.icon}</svg>${f.label}
+   </button>`).join("");
+$("filters").addEventListener("click",e=>{
+  const b = e.target.closest("[data-f]"); if(!b) return;
+  filter = b.dataset.f;
+  [...$("filters").children].forEach(c=>c.classList.toggle("on", c===b));
+  render();
+});
+
+function matchHTML(m,i){
+  const off = tz ? tz.off : 0;
+  const p = localParts(m.kickoff, off);
+  return `
+    <div class="match${isLate(p.h)?" late":""}">
+      <div class="when">
+        <div class="t">${pad(p.h)}:${pad(p.m)}</div>
+        <div class="p">${partOfDay(p.h)}</div>
+      </div>
+      <span class="sep"></span>
+      <div class="who">
+        <div class="teams">
+          <span class="code">${m.home.code}</span>${m.home.name}
+          <span class="vs">vs</span>
+          <span class="code">${m.away.code}</span>${m.away.name}
+        </div>
+        <div class="venue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+          ${m.venue}
+        </div>
+      </div>
+      <span class="grp">${m.group}</span>
+      <button class="save${saved.has(i)?" on":""}" data-save="${i}" aria-label="Save match" aria-pressed="${saved.has(i)}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M10 19h4M12 14v5"/></svg>
+      </button>
+    </div>`;
+}
+
+function emptyHTML(icon, msg, sub){
+  return `<div class="empty">
+    <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">${icon}</svg></div>
+    <p>${msg}</p>${sub?`<small>${sub}</small>`:""}</div>`;
+}
+const CLOCK_ICON  = '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>';
+const TROPHY_ICON = '<path d="M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M10 19h4M12 14v5"/>';
+
+function passes(m){
+  const off = tz ? tz.off : 0;
+  const t = new Date(m.kickoff).getTime();
+  const ref = now().getTime();
+  if(filter === "all")  return t >= ref;
+  if(filter === "week") return t >= ref && t <= ref + 7*864e5;
+  if(filter === "must") return !!m.must;
+  if(filter === "late") return isLate(localParts(m.kickoff, off).h);
+  return true;
+}
+
+function groupByDay(list){
+  const off = tz ? tz.off : 0;
+  const map = new Map();
+  list.forEach(({m,i})=>{
+    const p = localParts(m.kickoff, off);
+    if(!map.has(p.date)) map.set(p.date,{label:p.label, items:[]});
+    map.get(p.date).items.push({m,i});
+  });
+  return [...map.entries()].sort((a,b)=>a[0]<b[0]?-1:1);
+}
+
+function render(){
+  const indexed = MATCHES.map((m,i)=>({m,i}))
+    .sort((a,b)=> new Date(a.m.kickoff) - new Date(b.m.kickoff));
+
+  /* watch plan (con filtro) */
+  const plan = indexed.filter(({m})=>passes(m));
+  $("planList").innerHTML = plan.length
+    ? groupByDay(plan).map(([,g])=>`
+        <div class="day">
+          <div class="day-head"><span class="dot"></span><span class="d">${g.label}</span>
+            <span class="rule"></span><span class="c">${g.items.length} match${g.items.length>1?"es":""}</span></div>
+          ${g.items.map(({m,i})=>matchHTML(m,i)).join("")}
+        </div>`).join("")
+    : emptyHTML(CLOCK_ICON, "No matches found for this filter.");
+
+  /* schedule completo */
+  $("schedSub").textContent = `All ${MATCHES.length} featured matches grouped by your local date`;
+  $("schedList").innerHTML = indexed.length
+    ? groupByDay(indexed).map(([,g])=>`
+        <div class="day">
+          <div class="day-head"><span class="dot"></span><span class="d">${g.label}</span>
+            <span class="rule"></span><span class="c">${g.items.length} match${g.items.length>1?"es":""}</span></div>
+          ${g.items.map(({m,i})=>matchHTML(m,i)).join("")}
+        </div>`).join("")
+    : emptyHTML(CLOCK_ICON, "No matches loaded yet.", "Add entries to the MATCHES array in the source.");
+
+  /* watchlist */
+  const mine = indexed.filter(({i})=>saved.has(i));
+  $("watchSub").textContent = `${mine.length} match${mine.length===1?"":"es"} saved to your plan`;
+  $("watchList").innerHTML = mine.length
+    ? mine.map(({m,i})=>matchHTML(m,i)).join("")
+    : emptyHTML(TROPHY_ICON, "No matches saved yet", 'Hit the "Save" button on any match card to add it to your watch plan');
+}
+
+document.addEventListener("click",e=>{
+  const b = e.target.closest("[data-save]"); if(!b) return;
+  const i = +b.dataset.save;
+  saved.has(i) ? saved.delete(i) : saved.add(i);
+  render();
+});
+
+/* ---------- desplazamiento suave con easing propio ---------- */
+const NAV_OFFSET = 74;
+const easeInOutCubic = t => t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2;
+
+function scrollToId(id){
+  const el = $(id); if(!el) return;
+  const end = Math.max(0, el.getBoundingClientRect().top + scrollY - NAV_OFFSET);
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){
+    window.scrollTo(0, end); return;
+  }
+  const start = scrollY, dist = end - start;
+  const dur = Math.min(1100, Math.max(450, Math.abs(dist)*0.55));
+  let t0 = null;
+  function step(ts){
+    if(t0 === null) t0 = ts;
+    const p = Math.min(1, (ts - t0)/dur);
+    window.scrollTo(0, start + dist*easeInOutCubic(p));
+    if(p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* enlaces internos del nav y del footer */
+document.addEventListener("click",e=>{
+  const a = e.target.closest('a[href^="#"]');
+  if(!a) return;
+  e.preventDefault();
+  scrollToId(a.getAttribute("href").slice(1));
+});
+
+/* nav activo al hacer scroll */
+const sections = ["home","timezone","watchplan","schedule","watchlist"];
+addEventListener("scroll",()=>{
+  let cur = "home";
+  for(const id of sections){
+    const el = $(id);
+    if(el && el.getBoundingClientRect().top <= 120) cur = id;
+  }
+  document.querySelectorAll(".nav-links a").forEach(a=>
+    a.classList.toggle("on", a.getAttribute("href") === "#"+cur));
+},{passive:true});
+
+render();
+</script>
+</body>
+</html>

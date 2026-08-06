@@ -1,0 +1,1315 @@
+[
+  {
+    "id": "logro-ahorro-250k",
+    "tipo": "logro",
+    "seccion_actual": "logros",
+    "titulo_es": "Ahorro operativo acumulado",
+    "titulo_en": "Cumulative Operational Savings",
+    "texto_es": "Optimización de contratos de telecomunicaciones, racionalización de proveedores e implementación de estrategias de automatización.",
+    "texto_en": "Optimization of telecommunications contracts, vendor rationalization, and implementation of automation strategies.",
+    "metrica": "USD 250K+",
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 3,
+      "pm": 1,
+      "ai": 3
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "logro-usuarios-operacion-continua",
+    "tipo": "logro",
+    "seccion_actual": "logros",
+    "titulo_es": "Usuarios en operación continua",
+    "titulo_en": "Continuous Operations Users",
+    "texto_es": "Continuidad de plataformas críticas en Latinoamérica y Norteamérica mediante administración de infraestructura y TI.",
+    "texto_en": "Business continuity for mission-critical platforms across Latin America and North America through infrastructure and IT management.",
+    "metrica": "1M+ / 5 países",
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 2,
+      "pm": 2,
+      "ai": 4
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "logro-implementaciones-salesforce",
+    "tipo": "logro",
+    "seccion_actual": "logros",
+    "titulo_es": "Implementaciones Salesforce",
+    "titulo_en": "Salesforce Implementations",
+    "texto_es": "Dirección de implementaciones Salesforce Enterprise para clientes internacionales, del onboarding a la adopción.",
+    "texto_en": "Leadership of Salesforce Enterprise implementations for international clients, from onboarding to adoption.",
+    "metrica": "Enterprise",
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm"
+    ],
+    "prioridad": {
+      "crm": 1,
+      "pm": 3
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "logro-soluciones-saas-ia",
+    "tipo": "logro",
+    "seccion_actual": "logros",
+    "titulo_es": "Soluciones SaaS con IA",
+    "titulo_en": "AI-Powered SaaS Solutions",
+    "texto_es": "Diseño de arquitectura de producto SaaS impulsada por Inteligencia Artificial Generativa y automatización inteligente.",
+    "texto_en": "Design of SaaS product architecture powered by Generative Artificial Intelligence and intelligent automation.",
+    "metrica": "LLMs · Python · n8n",
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 4,
+      "pm": 4,
+      "ai": 1
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "hero-eyebrow",
+    "tipo": "hero",
+    "seccion_actual": "inicio",
+    "titulo_es": null,
+    "titulo_en": null,
+    "texto_es": "Portafolio profesional",
+    "texto_en": "Professional Portfolio",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 1,
+      "pm": 1,
+      "ai": 1
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "hero-titulo",
+    "tipo": "hero",
+    "seccion_actual": "inicio",
+    "titulo_es": "Juan Sebastián González Castellanos PMP®",
+    "titulo_en": "Juan Sebastián González Castellanos PMP®",
+    "texto_es": "Senior Technical Project Manager · AI Product Manager · Digital Transformation Leader",
+    "texto_en": "Senior Technical Project Manager · AI Product Manager · Digital Transformation Leader",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 1,
+      "pm": 1,
+      "ai": 1
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "hero-pitch",
+    "tipo": "hero",
+    "seccion_actual": "inicio",
+    "titulo_es": null,
+    "titulo_en": null,
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 1,
+      "pm": 1,
+      "ai": 1
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null,
+    "variantes": {
+      "crm": {
+        "texto_es": "Lidero implementaciones de Salesforce Enterprise y Commerce Cloud en 5 países. Diseño el gobierno de la plataforma y su integración con sistemas ERP y de analítica para escalar operaciones transaccionales complejas.",
+        "texto_en": "I lead Salesforce Enterprise and Commerce Cloud implementations across 5 countries. I design platform governance and integrate ERP and analytics systems to scale complex transactional operations."
+      },
+      "pm": {
+        "texto_es": "Como PMP® con 11 años de experiencia, dirijo portafolios tecnológicos regionales. Gestiono riesgos y proveedores estratégicos, logrando ahorros anuales de USD 250.000 mediante la optimización continua de recursos y procesos operativos.",
+        "texto_en": "As a PMP® with 11 years of experience, I direct regional technology portfolios. I manage risks and strategic vendors, achieving USD 250,000 in annual savings through continuous resource and operational process optimization."
+      },
+      "ai": {
+        "texto_es": "Arquitecto plataformas SaaS como AuditFlow utilizando Next.js 15+ e integrando LLMs y arquitecturas Chat-to-Case. Desarrollo agentes autónomos con Python y n8n para automatizar flujos operativos de alta complejidad.",
+        "texto_en": "I architect SaaS platforms like AuditFlow using Next.js 15+, integrating LLMs and Chat-to-Case architectures. I develop autonomous agents with Python and n8n to automate highly complex operational workflows."
+      }
+    },
+    "nota": "El pitch se toma de variantes[perfil_activo]. El texto único anterior (con 99% uptime y 75%) queda retirado hasta verificar ambas cifras."
+  },
+  {
+    "id": "proyecto-auditflow",
+    "tipo": "proyecto",
+    "seccion_actual": "proyectos",
+    "titulo_es": "AuditFlow",
+    "titulo_en": "AuditFlow",
+    "texto_es": "Arquitectura Chat-to-Case que automatiza la consolidación de datos combinando Next.js, n8n y modelos LLM, con persistencia en Supabase.",
+    "texto_en": "Chat-to-Case architecture that automates data consolidation by combining Next.js, n8n, and LLMs, with Supabase persistence.",
+    "metrica": null,
+    "stack": [
+      "Next.js",
+      "n8n",
+      "LLM",
+      "Supabase"
+    ],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 5,
+      "pm": 4,
+      "ai": 1
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "proyecto-web-check-in",
+    "tipo": "proyecto",
+    "seccion_actual": "proyectos",
+    "titulo_es": "Web Check-in",
+    "titulo_en": "Web Check-in",
+    "texto_es": "Aplicación web para la gestión automatizada de check-in de huéspedes, con captura de reservas en tiempo real y generación de tokens únicos de seguridad.",
+    "texto_en": "Web application for automated guest check-in management, featuring real-time reservation capture and unique security token generation.",
+    "metrica": null,
+    "stack": [
+      "Next.js",
+      "Vercel",
+      "Make",
+      "Supabase"
+    ],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 6,
+      "pm": 5,
+      "ai": 2
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "proyecto-cumplimiento-validacion-identidad",
+    "tipo": "proyecto",
+    "seccion_actual": "proyectos",
+    "titulo_es": "Integración de Cumplimiento y Validación de Identidad",
+    "titulo_en": "Compliance & Identity Validation Integration",
+    "texto_es": "Arquitectura e integración de sistemas críticos de validación antifraude y normativos conectados a plataformas de registro en línea (.NET).",
+    "texto_en": "Architecture and integration of critical antifraud and regulatory validation systems connected to online registration platforms (.NET).",
+    "metrica": null,
+    "stack": [
+      "ASP.NET",
+      "APIs REST",
+      "Protocolos de Seguridad de Red"
+    ],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 2,
+      "pm": 6,
+      "ai": 5
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "proyecto-facturacion-electronica",
+    "tipo": "proyecto",
+    "seccion_actual": "proyectos",
+    "titulo_es": "Automatización y Procesamiento Masivo de Facturación Electrónica",
+    "titulo_en": "Automation & Mass Processing of Electronic Invoicing",
+    "texto_es": "Implementación de motor de facturación electrónica a gran escala conectado al ERP corporativo.",
+    "texto_en": "Implementation of a large-scale electronic invoicing engine connected to the corporate ERP.",
+    "metrica": null,
+    "stack": [
+      "Oracle JD Edwards",
+      "Conector Universal API",
+      "Facture SAS"
+    ],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 3,
+      "pm": 3,
+      "ai": 3
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "proyecto-ecommerce-salesforce-multipais",
+    "tipo": "proyecto",
+    "seccion_actual": "proyectos",
+    "titulo_es": "Ecosistema E-Commerce y Salesforce Multipaís",
+    "titulo_en": "Multi-Country E-Commerce & Salesforce Ecosystem",
+    "texto_es": "Despliegue y arquitectura de plataformas de experiencia de cliente y comercio electrónico a nivel regional.",
+    "texto_en": "Deployment and architecture of regional customer experience and e-commerce platforms.",
+    "metrica": null,
+    "stack": [
+      "Salesforce Service Cloud",
+      "Salesforce Marketing Cloud",
+      "Salesforce Commerce Cloud",
+      "Tableau"
+    ],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 1,
+      "pm": 2,
+      "ai": 4
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "proyecto-datacenter-redes-criticas",
+    "tipo": "proyecto",
+    "seccion_actual": "proyectos",
+    "titulo_es": "Infraestructura Datacenter y Redes Críticas",
+    "titulo_en": "Data Center Infrastructure & Critical Networks",
+    "texto_es": "Diseño y despliegue físico y lógico de la infraestructura tecnológica corporativa para sede de 1,000 metros cuadrados.",
+    "texto_en": "Physical and logical design and deployment of corporate technology infrastructure for a 1,000-square-meter facility.",
+    "metrica": null,
+    "stack": [
+      "Servidores Dell",
+      "UPS de 16 kVA",
+      "Planta telefónica Avaya",
+      "Routers/Switches Cisco",
+      "Cableado Estructurado",
+      "AWS EC2",
+      "Ruby on Rails",
+      "PostgreSQL"
+    ],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 4,
+      "pm": 1,
+      "ai": 6
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "experiencia-ai-solutions-architect-delivery-lead",
+    "tipo": "experiencia",
+    "seccion_actual": "experiencia",
+    "titulo_es": "AI Solutions Architect & Delivery Lead",
+    "titulo_en": "AI Solutions Architect & Delivery Lead",
+    "texto_es": "Lidero la estrategia y ejecución end-to-end de una plataforma SaaS corporativa, garantizando el ritmo de ejecución desde la fase de planeación y diseño arquitectónico hasta su estabilización.\nCoordino múltiples iniciativas simultáneas bajo marcos ágiles, definiendo alcances, responsables y entregables para células de ingeniería distribuidas.\nIdentifico y mitigo activamente riesgos y bloqueos técnicos, asegurando el cumplimiento estricto de los hitos del proyecto y la calidad del producto final.",
+    "texto_en": "I lead the end-to-end strategy and execution of a corporate SaaS platform, ensuring the pace of execution from the planning and architectural design phase through to its stabilization.\nI coordinate multiple simultaneous initiatives under agile frameworks, defining scopes, assignees, and deliverables for distributed engineering cells.\nI actively identify and mitigate technical risks and blockers, ensuring strict compliance with project milestones and final product quality.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 1,
+      "pm": 1,
+      "ai": 1
+    },
+    "empresa": "AUDITFLOW PMO | B2B SaaS",
+    "fecha_inicio": "2025",
+    "fecha_fin": "Presente"
+  },
+  {
+    "id": "experiencia-technical-project-manager-scrum-master",
+    "tipo": "experiencia",
+    "seccion_actual": "experiencia",
+    "titulo_es": "Technical Project Manager & Scrum Master (Concurrent Contract)",
+    "titulo_en": "Technical Project Manager & Scrum Master (Concurrent Contract)",
+    "texto_es": "Lideré mesas de trabajo y ceremonias ágiles para el despliegue de soluciones de software corporativo, garantizando la articulación perfecta entre los requerimientos del negocio y la ejecución técnica.\nConsolidé los avances del proyecto, mapeé dependencias críticas y preparé reportes de seguimiento para clientes norteamericanos, escalando desviaciones de forma oportuna para no afectar la ruta crítica.",
+    "texto_en": "I led workgroups and agile ceremonies for the deployment of corporate software solutions, ensuring perfect articulation between business requirements and technical execution.\nI consolidated project progress, mapped critical dependencies, and prepared tracking reports for North American clients, escalating deviations in a timely manner so as not to affect the critical path.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 2,
+      "pm": 2,
+      "ai": 2
+    },
+    "empresa": "BENELINX & OKTANA | Consultoría Tecnológica (EE. UU.)",
+    "fecha_inicio": "Enero 2026",
+    "fecha_fin": "Julio 2026"
+  },
+  {
+    "id": "experiencia-it-senior-leader-technical-program-manager",
+    "tipo": "experiencia",
+    "seccion_actual": "experiencia",
+    "titulo_es": "IT Senior Leader & Technical Program Manager (PMO)",
+    "titulo_en": "IT Senior Leader & Technical Program Manager (PMO)",
+    "texto_es": "Lideré como Project Manager Senior el portafolio tecnológico regional durante más de 11 años, gestionando proyectos end-to-end que impactaron a más de 1 millón de usuarios en 5 países.\nArticulé la comunicación y los planes de trabajo entre la casa matriz (EE. UU.), los equipos de negocio locales y los proveedores de tecnología externos, manteniendo un ritmo de ejecución constante y orientado a resultados.\nConsolidé datos operativos y financieros para preparar y sustentar reportes ejecutivos ante directivos (C-Level), brindando visibilidad total sobre la salud de los proyectos.\nGestioné activamente matrices de riesgos corporativos y dependencias complejas durante la integración de ecosistemas transaccionales y herramientas CRM.",
+    "texto_en": "I led the regional technological portfolio as a Senior Project Manager for more than 11 years, managing end-to-end projects that impacted more than 1 million users in 5 countries.\nI articulated communication and work plans between the headquarters (USA), local business teams, and external technology providers, maintaining a constant and results-oriented execution pace.\nI consolidated operational and financial data to prepare and defend executive reports to C-Level directors, providing total visibility on project health.\nI actively managed corporate risk matrices and complex dependencies during the integration of transactional ecosystems and CRM tools.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 3,
+      "pm": 3,
+      "ai": 3
+    },
+    "empresa": "MARY KAY INC. | Operaciones LATAM & EE. UU.",
+    "fecha_inicio": "Septiembre 2014",
+    "fecha_fin": "Noviembre 2025"
+  },
+  {
+    "id": "experiencia-it-support-infrastructure-coordinator",
+    "tipo": "experiencia",
+    "seccion_actual": "experiencia",
+    "titulo_es": "IT Support & Infrastructure Coordinator",
+    "titulo_en": "IT Support & Infrastructure Coordinator",
+    "texto_es": "Coordiné proyectos de actualización de infraestructura y estabilidad de redes, asegurando la continuidad del negocio y el cumplimiento de estándares globales.",
+    "texto_en": "I coordinated infrastructure upgrade and network stability projects, ensuring business continuity and compliance with global standards.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 4,
+      "pm": 4,
+      "ai": 4
+    },
+    "empresa": "EMERSON ELECTRIC / VERTIV",
+    "fecha_inicio": "Marzo 2012",
+    "fecha_fin": "Septiembre 2014"
+  },
+  {
+    "id": "educacion-pmp",
+    "tipo": "educacion",
+    "seccion_actual": "educacion",
+    "titulo_es": "Project Management Professional (PMP®)",
+    "titulo_en": "Project Management Professional (PMP®)",
+    "texto_es": "Certifica la capacidad para dirigir proyectos complejos y gestionar presupuestos bajo estándares internacionales.",
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 1,
+      "pm": 1,
+      "ai": 3
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "educacion-mba",
+    "tipo": "educacion",
+    "seccion_actual": "educacion",
+    "titulo_es": "MBA (En curso)",
+    "titulo_en": "MBA (In progress)",
+    "texto_es": "Aporta visión estratégica y financiera para alinear la tecnología con los objetivos del negocio.",
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 3,
+      "pm": 4,
+      "ai": 5
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "educacion-master-business-intelligence-machine-learning",
+    "tipo": "educacion",
+    "seccion_actual": "educacion",
+    "titulo_es": "Máster en Business Intelligence & Machine Learning (En curso)",
+    "titulo_en": "Master's in Business Intelligence & Machine Learning (In progress)",
+    "texto_es": "Desarrolla habilidades analíticas para implementar modelos predictivos y decisiones basadas en datos.",
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 5,
+      "pm": 5,
+      "ai": 2
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "educacion-especializacion-ia-corporativa",
+    "tipo": "educacion",
+    "seccion_actual": "educacion",
+    "titulo_es": "Especialización en Inteligencia Artificial Corporativa",
+    "titulo_en": "Corporate Artificial Intelligence Specialization",
+    "texto_es": "Capacita en la arquitectura e integración de agentes de IA y LLMs en entornos empresariales.",
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 6,
+      "pm": 6,
+      "ai": 1
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "educacion-especialista-gerencia-proyectos",
+    "tipo": "educacion",
+    "seccion_actual": "educacion",
+    "titulo_es": "Especialista en Gerencia de Proyectos",
+    "titulo_en": "Project Management Specialist",
+    "texto_es": "Proporciona marcos metodológicos para la mitigación de riesgos y el liderazgo de equipos.",
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 4,
+      "pm": 2,
+      "ai": 6
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "educacion-ingeniero-sistemas",
+    "tipo": "educacion",
+    "seccion_actual": "educacion",
+    "titulo_es": "Ingeniero de Sistemas",
+    "titulo_en": "Systems Engineer",
+    "texto_es": "Otorga las bases técnicas en arquitectura de software, bases de datos e infraestructura.",
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 2,
+      "pm": 3,
+      "ai": 4
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-salesforce-commerce-cloud",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Salesforce Commerce Cloud",
+    "titulo_en": "Salesforce Commerce Cloud",
+    "texto_es": "Manejo de catálogos, despliegues de e-commerce y carritos de compra regionales.",
+    "texto_en": "Catalog management, e-commerce deployments, and regional shopping cart implementations.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm"
+    ],
+    "prioridad": {
+      "crm": 1,
+      "pm": 6
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-salesforce-service-cloud",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Salesforce Service Cloud",
+    "titulo_en": "Salesforce Service Cloud",
+    "texto_es": "Configuración de consolas de servicio, flujos de atención y automatización de soporte.",
+    "texto_en": "Service console configuration, case-handling workflows, and support automation.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm"
+    ],
+    "prioridad": {
+      "crm": 2,
+      "pm": 7
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-salesforce-crm-platform",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Salesforce CRM Platform",
+    "titulo_en": "Salesforce CRM Platform",
+    "texto_es": "Gestión de objetos, flujos de trabajo e integraciones empresariales.",
+    "texto_en": "Object management, workflow automation, and enterprise integrations.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm"
+    ],
+    "prioridad": {
+      "crm": 3,
+      "pm": 8
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-jira-confluence",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Jira & Confluence",
+    "titulo_en": "Jira & Confluence",
+    "texto_es": "Estructuración de backlogs, gestión de sprints, tableros Kanban y documentación técnica.",
+    "texto_en": "Backlog structuring, sprint management, Kanban boards, and technical documentation.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 6,
+      "pm": 1,
+      "ai": 6
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-azure-devops",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Azure DevOps",
+    "titulo_en": "Azure DevOps",
+    "texto_es": "Seguimiento de requerimientos y coordinación de ciclos de desarrollo ágiles.",
+    "texto_en": "Requirements tracking and coordination of agile development cycles.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm"
+    ],
+    "prioridad": {
+      "crm": 8,
+      "pm": 4
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-microsoft-project-smartsheet",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Microsoft Project & Smartsheet",
+    "titulo_en": "Microsoft Project & Smartsheet",
+    "texto_es": "Diseño de cronogramas maestros, diagramas de Gantt y control de dependencias.",
+    "texto_en": "Master schedule design, Gantt charts, and dependency management.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "pm"
+    ],
+    "prioridad": {
+      "pm": 2
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-notion-trello",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Notion & Trello",
+    "titulo_en": "Notion & Trello",
+    "texto_es": "Organización de flujos de trabajo síncronos y documentación ágil.",
+    "texto_en": "Organization of synchronous workflows and lightweight documentation.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "pm"
+    ],
+    "prioridad": {
+      "pm": 3
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-figma-miro",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Figma & Miro",
+    "titulo_en": "Figma & Miro",
+    "texto_es": "Wireframing, Product Discovery, mapeo de historias de usuario y diagramación de arquitecturas.",
+    "texto_en": "Wireframing, product discovery, user story mapping, and architecture diagramming.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "pm": 11,
+      "ai": 5
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-postman",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Postman",
+    "titulo_en": "Postman",
+    "texto_es": "Pruebas, documentación y validación de integraciones REST APIs.",
+    "texto_en": "Testing, documentation, and validation of REST API integrations.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 7,
+      "ai": 7
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-ringcentral-cloud-voip",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "RingCentral Cloud VoIP",
+    "titulo_en": "RingCentral Cloud VoIP",
+    "texto_es": "Migración y telefonía en la nube embebida en plataformas CRM.",
+    "texto_en": "Cloud telephony migration embedded within CRM platforms.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "pm"
+    ],
+    "prioridad": {
+      "pm": 10
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-cisco-infrastructure",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Cisco Infrastructure",
+    "titulo_en": "Cisco Infrastructure",
+    "texto_es": "Administración de redes físicas y telefonía heredada.",
+    "texto_en": "Management of physical networks and legacy telephony systems.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "pm"
+    ],
+    "prioridad": {
+      "pm": 9
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-omnichannel-apis",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Omnichannel APIs",
+    "titulo_en": "Omnichannel APIs",
+    "texto_es": "Diseño e integración de canales de voz, chat y automatizaciones.",
+    "texto_en": "Design and integration of voice, chat, and automation channels.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 4,
+      "ai": 8
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-nextjs-react",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Next.js 15+ & React",
+    "titulo_en": "Next.js 15+ & React",
+    "texto_es": "Arquitectura y desarrollo frontend para SaaS.",
+    "texto_en": "Frontend architecture and development for SaaS products.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 4
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-supabase-postgresql",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Supabase / PostgreSQL",
+    "titulo_en": "Supabase / PostgreSQL",
+    "texto_es": "Bases de datos relacionales, autenticación y almacenamiento.",
+    "texto_en": "Relational databases, authentication, and storage.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 9
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-python-sql",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Python & SQL",
+    "titulo_en": "Python & SQL",
+    "texto_es": "Scripts de automatización, tuberías de datos y análisis de métricas.",
+    "texto_en": "Automation scripting, data pipelines, and metrics analysis.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 3
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-git-github-vercel",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Git, GitHub & Vercel",
+    "titulo_en": "Git, GitHub & Vercel",
+    "texto_es": "Control de versiones, despliegue continuo y hosting en la nube.",
+    "texto_en": "Version control, continuous deployment, and cloud hosting.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 10
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-tableau-power-bi",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Tableau & Power BI",
+    "titulo_en": "Tableau & Power BI",
+    "texto_es": "Visualización de datos, dashboards y analítica corporativa.",
+    "texto_en": "Data visualization, dashboards, and corporate analytics.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm"
+    ],
+    "prioridad": {
+      "crm": 5,
+      "pm": 5
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-n8n",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "n8n",
+    "titulo_en": "n8n",
+    "texto_es": "Orquestación de flujos de automatización empresariales de extremo a extremo.",
+    "texto_en": "End-to-end orchestration of enterprise automation workflows.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 1
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-claude-code-openai-cursor-ide",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Claude Code, OpenAI & Cursor IDE",
+    "titulo_en": "Claude Code, OpenAI & Cursor IDE",
+    "texto_es": "Ingeniería de prompts, arquitecturas RAG y desarrollo de software asistido por IA.",
+    "texto_en": "Prompt engineering, RAG architectures, and AI-assisted software development.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 2
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-relay",
+    "tipo": "skill",
+    "seccion_actual": "toolkit",
+    "titulo_es": "Relay",
+    "titulo_en": "Relay",
+    "texto_es": "Integración multiplataforma de flujos operativos.",
+    "texto_en": "Cross-platform integration of operational workflows.",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 11
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-react",
+    "tipo": "skill",
+    "seccion_actual": "technical-tools",
+    "titulo_es": "React",
+    "titulo_en": "React",
+    "texto_es": "Interfaces dinámicas",
+    "texto_en": "Dynamic UIs",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 1
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-nodejs",
+    "tipo": "skill",
+    "seccion_actual": "technical-tools",
+    "titulo_es": "Node.js",
+    "titulo_en": "Node.js",
+    "texto_es": "Backend & APIs",
+    "texto_en": "Backend & APIs",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 2
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-python-tool",
+    "tipo": "skill",
+    "seccion_actual": "technical-tools",
+    "titulo_es": "Python",
+    "titulo_en": "Python",
+    "texto_es": "Automatización & datos",
+    "texto_en": "Automation & data",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 3
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-playwright",
+    "tipo": "skill",
+    "seccion_actual": "technical-tools",
+    "titulo_es": "Playwright",
+    "titulo_en": "Playwright",
+    "texto_es": "Testing E2E",
+    "texto_en": "E2E Testing",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 5
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-postgresql-tool",
+    "tipo": "skill",
+    "seccion_actual": "technical-tools",
+    "titulo_es": "PostgreSQL",
+    "titulo_en": "PostgreSQL",
+    "texto_es": "Persistencia de datos",
+    "texto_en": "Data persistence",
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 4
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-area-project-program-management",
+    "tipo": "skill",
+    "seccion_actual": "educacion",
+    "titulo_es": "Project & Program Management",
+    "titulo_en": "Project & Program Management",
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 2,
+      "pm": 1,
+      "ai": 4
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-area-product-management",
+    "tipo": "skill",
+    "seccion_actual": "educacion",
+    "titulo_es": "Product Management",
+    "titulo_en": "Product Management",
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "pm": 5,
+      "ai": 2
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-area-generative-ai-llms",
+    "tipo": "skill",
+    "seccion_actual": "educacion",
+    "titulo_es": "Generative AI & LLMs",
+    "titulo_en": "Generative AI & LLMs",
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 1
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-area-salesforce",
+    "tipo": "skill",
+    "seccion_actual": "educacion",
+    "titulo_es": "Salesforce",
+    "titulo_en": "Salesforce",
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm"
+    ],
+    "prioridad": {
+      "crm": 1,
+      "pm": 4
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-area-agile-scrum",
+    "tipo": "skill",
+    "seccion_actual": "educacion",
+    "titulo_es": "Agile & Scrum",
+    "titulo_en": "Agile & Scrum",
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 3,
+      "pm": 2,
+      "ai": 5
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-area-python",
+    "tipo": "skill",
+    "seccion_actual": "educacion",
+    "titulo_es": "Python",
+    "titulo_en": "Python",
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 3
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-area-n8n",
+    "tipo": "skill",
+    "seccion_actual": "educacion",
+    "titulo_es": "n8n",
+    "titulo_en": "n8n",
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 7
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-area-nextjs-supabase",
+    "tipo": "skill",
+    "seccion_actual": "educacion",
+    "titulo_es": "Next.js & Supabase",
+    "titulo_en": "Next.js & Supabase",
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "ai"
+    ],
+    "prioridad": {
+      "ai": 8
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  },
+  {
+    "id": "skill-area-executive-communication",
+    "tipo": "skill",
+    "seccion_actual": "educacion",
+    "titulo_es": "Executive Communication",
+    "titulo_en": "Executive Communication",
+    "texto_es": null,
+    "texto_en": null,
+    "metrica": null,
+    "stack": [],
+    "perfiles": [
+      "crm",
+      "pm",
+      "ai"
+    ],
+    "prioridad": {
+      "crm": 4,
+      "pm": 3,
+      "ai": 6
+    },
+    "empresa": null,
+    "fecha_inicio": null,
+    "fecha_fin": null
+  }
+]

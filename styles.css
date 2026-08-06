@@ -18,6 +18,12 @@
   --accent: #4d7fe0;
   --accent-dim: rgba(77, 127, 224, 0.14);
 
+  /* Excepción deliberada a la regla de "un solo acento": WhatsApp es
+     identidad de marca de un tercero, no un énfasis nuestro. Su verde es
+     lo que lo hace reconocible al instante como canal de contacto, así
+     que no se unifica con --accent. */
+  --brand-whatsapp: #25D366;
+
   /* tipografía */
   --serif: "Cormorant Garamond", Georgia, serif;
   --mono: "Space Mono", ui-monospace, monospace;
@@ -577,8 +583,8 @@ h3 {
   padding-inline: var(--carousel-pad, var(--s5));
   margin-top: calc(var(--s4) * -1);
 
-  mask-image: linear-gradient(to right, transparent 0, black 64px, black calc(100% - 64px), transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0, black 64px, black calc(100% - 64px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
 
   /* Oculta la barra de scroll nativa en todos los navegadores;
      la navegación queda a cargo de los botones y los dots. */
@@ -597,8 +603,8 @@ h3 {
   scroll-snap-align: center;
   scroll-snap-stop: always;
   --card-scale: 0.95;
-  opacity: 0.4;
-  filter: blur(3px);
+  opacity: 0.75;
+  filter: blur(1px);
   cursor: pointer;
 }
 
@@ -966,9 +972,9 @@ h3 {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--brand-whatsapp);
   color: var(--ink);
-  box-shadow: 0 10px 25px var(--accent-dim);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
   animation: whatsapp-pulse 2.5s ease-in-out infinite;
   transition: transform 0.2s ease;
 }
@@ -980,13 +986,13 @@ h3 {
 
 @keyframes whatsapp-pulse {
   0% {
-    box-shadow: 0 0 0 0 var(--accent-dim), 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5), 0 10px 25px rgba(0, 0, 0, 0.3);
   }
   70% {
-    box-shadow: 0 0 0 16px rgba(77, 127, 224, 0), 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0), 0 10px 25px rgba(0, 0, 0, 0.3);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(77, 127, 224, 0), 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 10px 25px rgba(0, 0, 0, 0.3);
   }
 }
 
